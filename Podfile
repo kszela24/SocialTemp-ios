@@ -6,6 +6,7 @@ use_frameworks!
 
 target 'SocialTemp-ios' do
 	pod 'Parse'
+	pod 'Charts'
 end
 
 target 'SocialTemp-iosTests' do
