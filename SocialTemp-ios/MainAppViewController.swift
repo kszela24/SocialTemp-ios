@@ -66,6 +66,7 @@ class MainAppViewController: UIViewController, ChartViewDelegate {
             let set1 = BarChartDataSet(yVals: yVals, label: nil)
             set1.barSpace = 0.1
             set1.colors = [UIColor(red: 67.0/255.0, green: 31.0/255.0, blue: 129.0/255.0, alpha: 1)]
+            set1.drawValuesEnabled = false
             let data = BarChartData(xVals: self.times, dataSet: set1)
             self.chartView.data = data
             self.view.reloadInputViews()
