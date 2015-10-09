@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		158207285315D457FACE76F9 /* Pods_SocialTemp_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E2346EBA2F26838B0023B81 /* Pods_SocialTemp_ios.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		2727C2AF1BC768A00084FDBB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2727C2AE1BC768A00084FDBB /* AppDelegate.swift */; };
 		2727C2B11BC768A00084FDBB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2727C2B01BC768A00084FDBB /* ViewController.swift */; };
 		2727C2B41BC768A00084FDBB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2727C2B21BC768A00084FDBB /* Main.storyboard */; };
@@ -47,6 +48,9 @@
 		2727C2CA1BC768A00084FDBB /* SocialTemp-iosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SocialTemp-iosUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2727C2CE1BC768A00084FDBB /* SocialTemp_iosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialTemp_iosUITests.swift; sourceTree = "<group>"; };
 		2727C2D01BC768A00084FDBB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A2061BDFD86A8BE4FBDF30B /* Pods-SocialTemp-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialTemp-ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SocialTemp-ios/Pods-SocialTemp-ios.debug.xcconfig"; sourceTree = "<group>"; };
+		3E2346EBA2F26838B0023B81 /* Pods_SocialTemp_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SocialTemp_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		805D1DEB5EB5F15B49B491AF /* Pods-SocialTemp-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialTemp-ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-SocialTemp-ios/Pods-SocialTemp-ios.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				158207285315D457FACE76F9 /* Pods_SocialTemp_ios.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +86,8 @@
 				2727C2C21BC768A00084FDBB /* SocialTemp-iosTests */,
 				2727C2CD1BC768A00084FDBB /* SocialTemp-iosUITests */,
 				2727C2AC1BC768A00084FDBB /* Products */,
+				694AB1A78D2178968C91F6B7 /* Pods */,
+				CC9365D538C3C515892E2215 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -125,6 +132,23 @@
 			path = "SocialTemp-iosUITests";
 			sourceTree = "<group>";
 		};
+		694AB1A78D2178968C91F6B7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3A2061BDFD86A8BE4FBDF30B /* Pods-SocialTemp-ios.debug.xcconfig */,
+				805D1DEB5EB5F15B49B491AF /* Pods-SocialTemp-ios.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		CC9365D538C3C515892E2215 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3E2346EBA2F26838B0023B81 /* Pods_SocialTemp_ios.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +156,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2727C2D31BC768A00084FDBB /* Build configuration list for PBXNativeTarget "SocialTemp-ios" */;
 			buildPhases = (
+				7E33F6C5CE3B375E1075933A /* Check Pods Manifest.lock */,
 				2727C2A71BC768A00084FDBB /* Sources */,
 				2727C2A81BC768A00084FDBB /* Frameworks */,
 				2727C2A91BC768A00084FDBB /* Resources */,
+				A9650A0307C14B6600CDA028 /* Embed Pods Frameworks */,
+				B881EBDAA3837C627645B73E /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -252,6 +279,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7E33F6C5CE3B375E1075933A /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A9650A0307C14B6600CDA028 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SocialTemp-ios/Pods-SocialTemp-ios-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B881EBDAA3837C627645B73E /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SocialTemp-ios/Pods-SocialTemp-ios-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2727C2A71BC768A00084FDBB /* Sources */ = {
@@ -399,6 +474,7 @@
 		};
 		2727C2D41BC768A00084FDBB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3A2061BDFD86A8BE4FBDF30B /* Pods-SocialTemp-ios.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "SocialTemp-ios/Info.plist";
@@ -410,6 +486,7 @@
 		};
 		2727C2D51BC768A00084FDBB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 805D1DEB5EB5F15B49B491AF /* Pods-SocialTemp-ios.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "SocialTemp-ios/Info.plist";
@@ -486,6 +563,7 @@
 				2727C2D51BC768A00084FDBB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2727C2D61BC768A00084FDBB /* Build configuration list for PBXNativeTarget "SocialTemp-iosTests" */ = {
 			isa = XCConfigurationList;
@@ -494,6 +572,7 @@
 				2727C2D81BC768A00084FDBB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2727C2D91BC768A00084FDBB /* Build configuration list for PBXNativeTarget "SocialTemp-iosUITests" */ = {
 			isa = XCConfigurationList;
@@ -502,6 +581,7 @@
 				2727C2DB1BC768A00084FDBB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
