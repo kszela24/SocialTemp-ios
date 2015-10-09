@@ -1,6 +1,0 @@
-framework module Pods_SocialTemp_ios {
-  umbrella header "Pods-SocialTemp-ios-umbrella.h"
-
-  export *
-  module * { export * }
-}
