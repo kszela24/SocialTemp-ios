@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Xvj-JO-2z7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Xvj-JO-2z7">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--SocialTempNU-->
@@ -16,18 +17,65 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pQe-ZB-jIl">
-                                <rect key="frame" x="50" y="72" width="274" height="21"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wGt-T6-7T9" customClass="BarChartView" customModule="Charts">
+                                <rect key="frame" x="12" y="168" width="351" height="297"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Northwestern is 50% positive!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pQe-ZB-jIl">
+                                <rect key="frame" x="16" y="72" width="351" height="46"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="46" id="BSb-Rc-dGZ"/>
+                                    <constraint firstAttribute="height" constant="40" id="XNC-oV-imn"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="XNC-oV-imn"/>
+                                    </mask>
+                                </variation>
                             </label>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wGt-T6-7T9" customClass="BarChartView" customModule="Charts">
-                                <rect key="frame" x="20" y="202" width="335" height="263"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wGt-T6-7T9" firstAttribute="top" secondItem="pQe-ZB-jIl" secondAttribute="bottom" constant="50" id="2h9-vG-qSN"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="pQe-ZB-jIl" secondAttribute="trailing" constant="31" id="6Vv-2O-366"/>
+                            <constraint firstItem="pQe-ZB-jIl" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="Axl-kg-CMa"/>
+                            <constraint firstItem="wGt-T6-7T9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-4" id="HwJ-z3-rSG"/>
+                            <constraint firstItem="pQe-ZB-jIl" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="30" id="OSf-OE-DSi"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="pQe-ZB-jIl" secondAttribute="leading" id="QLN-fA-TGt"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="pQe-ZB-jIl" secondAttribute="trailing" constant="-8" id="TU3-us-CUR"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="wGt-T6-7T9" secondAttribute="bottom" constant="202" id="UoO-se-usq"/>
+                            <constraint firstItem="wGt-T6-7T9" firstAttribute="top" secondItem="pQe-ZB-jIl" secondAttribute="bottom" constant="8" symbolic="YES" id="Yob-hg-oxl"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="pQe-ZB-jIl" secondAttribute="leading" id="ZeR-Ba-wiJ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="pQe-ZB-jIl" secondAttribute="trailing" constant="-8" id="Zm2-uS-XF0"/>
+                            <constraint firstItem="wGt-T6-7T9" firstAttribute="top" secondItem="pQe-ZB-jIl" secondAttribute="bottom" constant="109" id="aUS-f0-8dn"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="wGt-T6-7T9" secondAttribute="trailing" constant="-4" id="aro-bZ-TVj"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="wGt-T6-7T9" secondAttribute="trailing" constant="-4" id="cNO-em-ctD"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="wGt-T6-7T9" secondAttribute="leading" id="gT7-Kf-Lri"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="wGt-T6-7T9" secondAttribute="bottom" constant="202" id="iv1-YZ-4Oi"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="wGt-T6-7T9" secondAttribute="trailing" id="qPZ-so-hIO"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="wGt-T6-7T9" secondAttribute="bottom" constant="202" id="zZB-fc-S1T"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="6Vv-2O-366"/>
+                                <exclude reference="OSf-OE-DSi"/>
+                                <exclude reference="TU3-us-CUR"/>
+                                <exclude reference="ZeR-Ba-wiJ"/>
+                                <exclude reference="Yob-hg-oxl"/>
+                                <exclude reference="aUS-f0-8dn"/>
+                                <exclude reference="cNO-em-ctD"/>
+                                <exclude reference="gT7-Kf-Lri"/>
+                                <exclude reference="qPZ-so-hIO"/>
+                                <exclude reference="iv1-YZ-4Oi"/>
+                                <exclude reference="zZB-fc-S1T"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="kYG-Eu-8aZ"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
@@ -47,6 +95,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="X1x-Xp-FQy">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
                     </navigationBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="1DJ-9a-Hpn"/>
