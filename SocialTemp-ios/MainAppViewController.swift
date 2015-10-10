@@ -38,6 +38,7 @@ class MainAppViewController: UIViewController, ChartViewDelegate {
         chartView.drawBordersEnabled = false
         chartView.noDataText = ""
         chartView.drawBordersEnabled = false
+        chartView.animate(yAxisDuration: 2.0)
         chartGetData()
         
         // Do any additional setup after loading the view.
