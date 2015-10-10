@@ -62,8 +62,8 @@ class MainAppViewController: UIViewController, ChartViewDelegate {
             for (index,percentage) in self.percentages.enumerate() {
                 yVals.append(BarChartDataEntry(value: Double(percentage), xIndex: index))
             }
-            
-            let set1 = BarChartDataSet(yVals: yVals, label: nil)
+
+            let set1 = BarChartDataSet(yVals: yVals, label: "Positiveness")
             set1.barSpace = 0.1
             set1.colors = [UIColor(red: 67.0/255.0, green: 31.0/255.0, blue: 129.0/255.0, alpha: 1)]
             set1.drawValuesEnabled = false
