@@ -34,15 +34,18 @@ class MainAppViewController: UIViewController, ChartViewDelegate {
         chartView.delegate = self
         chartView.descriptionText = "";
         chartView.noDataTextDescription = "Data will be loaded soon."
+        chartView.pinchZoomEnabled = false
+        chartView.highlightEnabled = false
+        chartView.fitScreen()
         chartView.xAxis.enabled = true
         chartView.rightAxis.enabled = false
         chartView.maxVisibleValueCount = 60
         chartView.pinchZoomEnabled = false
         chartView.drawGridBackgroundEnabled = false
-        chartView.drawBordersEnabled = false
+        chartView.drawBordersEnabled = true
         chartView.noDataText = ""
         chartView.drawBordersEnabled = false
-        //chartView.animate(yAxisDuration: 2.0)
+        chartView.animate(yAxisDuration: 2.0)
         chartGetData()
     }
 
@@ -83,7 +86,7 @@ class MainAppViewController: UIViewController, ChartViewDelegate {
             }
             
             let set1 = LineChartDataSet(yVals: yVals, label: "Cumulative Polarity")
-            set1.colors = [UIColor(red: 67.0/255.0, green: 31.0/255.0, blue: 129.0/255.0, alpha: 1)]
+            set1.colors = [UIColor.redColor()]
             set1.drawValuesEnabled = false
             set1.drawCubicEnabled = true
             set1.cubicIntensity = 0.2
@@ -103,6 +106,12 @@ class MainAppViewController: UIViewController, ChartViewDelegate {
             set3.cubicIntensity = 0.2
             set3.drawCirclesEnabled = false
             
+            let xAxis = self.chartView.xAxis
+            let yAxis = self.chartView.leftAxis
+            
+            yAxis.drawGridLinesEnabled = false
+            xAxis.drawGridLinesEnabled = false
+            self.chartView.xAxis.labelPosition = .Bottom
             let data = LineChartData(xVals: self.times, dataSets: [set1, set2, set3])
             self.chartView.data = data
             self.view.reloadInputViews()
