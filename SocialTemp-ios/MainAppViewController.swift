@@ -85,21 +85,21 @@ class MainAppViewController: UIViewController, ChartViewDelegate {
                 yValsYaks.append(ChartDataEntry(value: Double(polarity), xIndex:index))
             }
             
-            let set1 = LineChartDataSet(yVals: yVals, label: "Cumulative Polarity")
+            let set1 = LineChartDataSet(yVals: yVals, label: "Cumulative Positivity")
             set1.colors = [UIColor.redColor()]
             set1.drawValuesEnabled = false
             set1.drawCubicEnabled = true
             set1.cubicIntensity = 0.2
             set1.drawCirclesEnabled = false
             
-            let set2 = LineChartDataSet(yVals: yValsTweets, label: "Tweet Polarity")
+            let set2 = LineChartDataSet(yVals: yValsTweets, label: "Tweet Positivity")
             set2.colors = [UIColor.blueColor()]
             set2.drawValuesEnabled = false
             set2.drawCubicEnabled = true
             set2.cubicIntensity = 0.2
             set2.drawCirclesEnabled = false
             
-            let set3 = LineChartDataSet(yVals: yValsYaks, label: "YikYak Polarity")
+            let set3 = LineChartDataSet(yVals: yValsYaks, label: "YikYak Positivity")
             set3.colors = [UIColor.greenColor()]
             set3.drawValuesEnabled = false
             set3.drawCubicEnabled = true
