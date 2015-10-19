@@ -13,9 +13,12 @@ import Charts
 class MainAppViewController: UIViewController, ChartViewDelegate {
     
     @IBOutlet var displayText: UILabel!
-    @IBOutlet var chartView: BarChartView!
+    @IBOutlet var chartView: LineChartView!
     var times:[String] = []
     var percentages:[Int] = []
+    var polarityCumulative:[Float] = []
+    var polarityTweets:[Float] = []
+    var polarityYaks:[Float] = []
     
     override func viewDidLoad() {
         loadInfo()
@@ -27,21 +30,20 @@ class MainAppViewController: UIViewController, ChartViewDelegate {
         self.title = "SocialTempNU"
         
         //Chart
+        
         chartView.delegate = self
         chartView.descriptionText = "";
         chartView.noDataTextDescription = "Data will be loaded soon."
-        chartView.drawBarShadowEnabled = false
-        chartView.drawValueAboveBarEnabled = true
+        chartView.xAxis.enabled = true
+        chartView.rightAxis.enabled = false
         chartView.maxVisibleValueCount = 60
         chartView.pinchZoomEnabled = false
         chartView.drawGridBackgroundEnabled = false
         chartView.drawBordersEnabled = false
         chartView.noDataText = ""
         chartView.drawBordersEnabled = false
-        chartView.animate(yAxisDuration: 2.0)
+        //chartView.animate(yAxisDuration: 2.0)
         chartGetData()
-        
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -55,20 +57,53 @@ class MainAppViewController: UIViewController, ChartViewDelegate {
             let objects = response as! NSArray
             let percentagesParse = objects[0] as! [Int]
             let timesParse = objects[1] as! [String]
+            let polarityCumulativeParse = objects[2] as! [Float]
+            let polarityTweetsParse = objects[3] as! [Float]
+            let polarityYaksParse = objects[4] as! [Float]
             self.times += timesParse
             self.percentages += percentagesParse
+            self.polarityCumulative += polarityCumulativeParse
+            self.polarityTweets += polarityTweetsParse
+            self.polarityYaks += polarityYaksParse
             
-            var yVals: [BarChartDataEntry] = []
+            var yVals: [ChartDataEntry] = []
+            var yValsTweets: [ChartDataEntry] = []
+            var yValsYaks: [ChartDataEntry] = []
             
-            for (index,percentage) in self.percentages.enumerate() {
-                yVals.append(BarChartDataEntry(value: Double(percentage), xIndex: index))
+            for (index, polarity) in self.polarityCumulative.enumerate() {
+                yVals.append(ChartDataEntry(value: Double(polarity), xIndex: index))
             }
-
-            let set1 = BarChartDataSet(yVals: yVals, label: "Positiveness")
-            set1.barSpace = 0.1
+            
+            for (index, polarity) in self.polarityTweets.enumerate() {
+                yValsTweets.append(ChartDataEntry(value: Double(polarity), xIndex: index))
+            }
+            
+            for (index, polarity) in self.polarityYaks.enumerate() {
+                yValsYaks.append(ChartDataEntry(value: Double(polarity), xIndex:index))
+            }
+            
+            let set1 = LineChartDataSet(yVals: yVals, label: "Cumulative Polarity")
             set1.colors = [UIColor(red: 67.0/255.0, green: 31.0/255.0, blue: 129.0/255.0, alpha: 1)]
             set1.drawValuesEnabled = false
-            let data = BarChartData(xVals: self.times, dataSet: set1)
+            set1.drawCubicEnabled = true
+            set1.cubicIntensity = 0.2
+            set1.drawCirclesEnabled = false
+            
+            let set2 = LineChartDataSet(yVals: yValsTweets, label: "Tweet Polarity")
+            set2.colors = [UIColor.blueColor()]
+            set2.drawValuesEnabled = false
+            set2.drawCubicEnabled = true
+            set2.cubicIntensity = 0.2
+            set2.drawCirclesEnabled = false
+            
+            let set3 = LineChartDataSet(yVals: yValsYaks, label: "YikYak Polarity")
+            set3.colors = [UIColor.greenColor()]
+            set3.drawValuesEnabled = false
+            set3.drawCubicEnabled = true
+            set3.cubicIntensity = 0.2
+            set3.drawCirclesEnabled = false
+            
+            let data = LineChartData(xVals: self.times, dataSets: [set1, set2, set3])
             self.chartView.data = data
             self.view.reloadInputViews()
         }
@@ -78,7 +113,7 @@ class MainAppViewController: UIViewController, ChartViewDelegate {
         PFCloud.callFunctionInBackground("returnSentiment", withParameters: nil) {
             (response: AnyObject?, error: NSError?) -> Void in
             let objects = response as! NSArray
-            self.displayText.text = "Northwestern is " + String(objects[0]) + "% " + String(objects[1])
+            self.displayText.text = "Northwestern is feeling " + String(objects[1])
         }
     }
 }
