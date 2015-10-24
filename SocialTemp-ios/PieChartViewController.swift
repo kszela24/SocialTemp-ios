@@ -13,7 +13,8 @@ class PieChartViewController: UIViewController {
     @IBOutlet weak var pieChartView: PieChartView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
         // Do any additional setup after loading the view.
         let topics = ["sports", "school"]
         let tally = [250.0, 700.0]
