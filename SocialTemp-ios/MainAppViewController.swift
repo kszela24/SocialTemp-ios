@@ -33,7 +33,7 @@ class MainAppViewController: UIViewController, ChartViewDelegate {
         
         chartView.delegate = self
         chartView.descriptionText = "";
-        chartView.noDataTextDescription = "Data will be loaded soon."
+        chartView.noDataTextDescription = "Loading..."
         chartView.pinchZoomEnabled = false
         chartView.highlightEnabled = false
         chartView.fitScreen()
@@ -57,21 +57,27 @@ class MainAppViewController: UIViewController, ChartViewDelegate {
     private func chartGetData() {
         PFCloud.callFunctionInBackground("chartGetData", withParameters: nil) {
             (response: AnyObject?, error: NSError?) -> Void in
+            
             let objects = response as! NSArray
+            
             let percentagesParse = objects[0] as! [Int]
+            
             let timesParse = objects[1] as! [String]
             let polarityCumulativeParse = objects[2] as! [Float]
             let polarityTweetsParse = objects[3] as! [Float]
             let polarityYaksParse = objects[4] as! [Float]
+            
             self.times += timesParse
             self.percentages += percentagesParse
             self.polarityCumulative += polarityCumulativeParse
             self.polarityTweets += polarityTweetsParse
             self.polarityYaks += polarityYaksParse
             
+            
             var yVals: [ChartDataEntry] = []
             var yValsTweets: [ChartDataEntry] = []
             var yValsYaks: [ChartDataEntry] = []
+            
             
             for (index, polarity) in self.polarityCumulative.enumerate() {
                 yVals.append(ChartDataEntry(value: Double(polarity), xIndex: index))
@@ -84,6 +90,8 @@ class MainAppViewController: UIViewController, ChartViewDelegate {
             for (index, polarity) in self.polarityYaks.enumerate() {
                 yValsYaks.append(ChartDataEntry(value: Double(polarity), xIndex:index))
             }
+            
+            
             
             let set1 = LineChartDataSet(yVals: yVals, label: "Cumulative Positivity")
             set1.colors = [UIColor.redColor()]
@@ -100,7 +108,7 @@ class MainAppViewController: UIViewController, ChartViewDelegate {
             set2.drawCirclesEnabled = false
             
             let set3 = LineChartDataSet(yVals: yValsYaks, label: "YikYak Positivity")
-            set3.colors = [UIColor.greenColor()]
+            set3.colors = [UIColor(red:0, green:0.72, blue:0.42, alpha:1)]
             set3.drawValuesEnabled = false
             set3.drawCubicEnabled = true
             set3.cubicIntensity = 0.2
