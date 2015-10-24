@@ -14,16 +14,16 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wGt-T6-7T9" customClass="LineChartView" customModule="Charts">
-                                <rect key="frame" x="12" y="168" width="351" height="297"/>
+                                <rect key="frame" x="12" y="168" width="296" height="198"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Northwestern is feeling positive!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pQe-ZB-jIl">
-                                <rect key="frame" x="12" y="72" width="351" height="46"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Northwestern is feeling positive!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pQe-ZB-jIl">
+                                <rect key="frame" x="16" y="72" width="296" height="46"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="46" id="BSb-Rc-dGZ"/>
@@ -38,8 +38,8 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1fH-rL-1uz" colorLabel="IBBuiltInLabel-Purple">
-                                <rect key="frame" x="112" y="556" width="151" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1fH-rL-1uz" colorLabel="IBBuiltInLabel-Purple">
+                                <rect key="frame" x="85" y="530" width="151" height="30"/>
                                 <animations/>
                                 <state key="normal" title="See Topic Distribution"/>
                                 <connections>
@@ -55,7 +55,9 @@
                             <constraint firstItem="pQe-ZB-jIl" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="Axl-kg-CMa"/>
                             <constraint firstItem="wGt-T6-7T9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-4" id="HwJ-z3-rSG"/>
                             <constraint firstItem="pQe-ZB-jIl" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="30" id="OSf-OE-DSi"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="1fH-rL-1uz" secondAttribute="bottom" constant="8" symbolic="YES" id="POW-Az-jmK"/>
                             <constraint firstAttribute="leadingMargin" secondItem="pQe-ZB-jIl" secondAttribute="leading" id="QLN-fA-TGt"/>
+                            <constraint firstItem="1fH-rL-1uz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="RBl-QT-Lys"/>
                             <constraint firstAttribute="trailingMargin" secondItem="pQe-ZB-jIl" secondAttribute="trailing" constant="-8" id="TU3-us-CUR"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="wGt-T6-7T9" secondAttribute="bottom" constant="202" id="UoO-se-usq"/>
                             <constraint firstItem="wGt-T6-7T9" firstAttribute="top" secondItem="pQe-ZB-jIl" secondAttribute="bottom" constant="8" symbolic="YES" id="Yob-hg-oxl"/>
@@ -86,7 +88,7 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="kYG-Eu-8aZ"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="chartView" destination="wGt-T6-7T9" id="fe4-7s-HFi"/>
                         <outlet property="displayText" destination="pQe-ZB-jIl" id="axw-Km-Iy3"/>
@@ -105,19 +107,27 @@
                         <viewControllerLayoutGuide type="bottom" id="3L3-wQ-ogU"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="2Th-ix-pCX">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bwY-RI-sNA" customClass="PieChartView" customModule="Charts">
-                                <rect key="frame" x="39" y="193" width="297" height="282"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bwY-RI-sNA" customClass="PieChartView" customModule="Charts">
+                                <rect key="frame" x="8" y="72" width="305" height="282"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="282" id="tKq-je-amz"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="bwY-RI-sNA" secondAttribute="trailing" constant="-9" id="5eb-DJ-mcp"/>
+                            <constraint firstItem="bwY-RI-sNA" firstAttribute="top" secondItem="4U6-vv-nPi" secondAttribute="bottom" constant="8" id="nFf-lH-Fgo"/>
+                            <constraint firstItem="bwY-RI-sNA" firstAttribute="leading" secondItem="2Th-ix-pCX" secondAttribute="leadingMargin" constant="-8" id="t9D-Y2-rEQ"/>
+                        </constraints>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="pieChartView" destination="bwY-RI-sNA" id="bWP-iZ-T8y"/>
                     </connections>
@@ -130,6 +140,7 @@
         <scene sceneID="jpm-fW-yx4">
             <objects>
                 <navigationController id="Xvj-JO-2z7" customClass="NavigationController" customModule="SocialTemp_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="X1x-Xp-FQy">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
