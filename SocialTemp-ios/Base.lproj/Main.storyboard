@@ -38,6 +38,14 @@
                                     </mask>
                                 </variation>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1fH-rL-1uz" colorLabel="IBBuiltInLabel-Purple">
+                                <rect key="frame" x="112" y="556" width="151" height="30"/>
+                                <animations/>
+                                <state key="normal" title="See Topic Distribution"/>
+                                <connections>
+                                    <segue destination="71d-Z7-N7b" kind="show" id="jAO-Pt-0QR"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -87,6 +95,36 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="159.5" y="292.5"/>
+        </scene>
+        <!--PieChart-->
+        <scene sceneID="Hj0-Qt-mCM">
+            <objects>
+                <viewController id="71d-Z7-N7b" userLabel="PieChart" customClass="PieChartViewController" customModule="SocialTemp_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4U6-vv-nPi"/>
+                        <viewControllerLayoutGuide type="bottom" id="3L3-wQ-ogU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2Th-ix-pCX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bwY-RI-sNA" customClass="PieChartView" customModule="Charts">
+                                <rect key="frame" x="39" y="193" width="297" height="282"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="pieChartView" destination="bwY-RI-sNA" id="bWP-iZ-T8y"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aw6-Bp-bfK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="649.5" y="292.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="jpm-fW-yx4">
