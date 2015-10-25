@@ -12,6 +12,7 @@ import Charts
 
 class MainAppViewController: UIViewController, ChartViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
     
+    @IBOutlet weak var polarityGradientView: UIView!
     @IBOutlet weak var arrowImageView: UIImageView!
     @IBOutlet weak var trendDirectionBackground: UIView!
     @IBOutlet weak var polarityChangeLabel: UILabel!
@@ -37,7 +38,18 @@ class MainAppViewController: UIViewController, ChartViewDelegate, UIPickerViewDe
         //NavBar
         self.navigationController?.navigationBar.barTintColor = UIColor(red: 67.0/255.0, green: 31.0/255.0, blue: 129.0/255.0, alpha: 1)
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
-        self.title = "SocialTempNU"
+        self.title = "Social Temperature"
+        
+        
+        let gradient : CAGradientLayer = CAGradientLayer()
+        gradient.frame = polarityGradientView.bounds
+        
+        let cor1 = UIColor(red:0.27, green:0.62, blue:0.1, alpha:1).CGColor
+        let cor2 = UIColor(red:0.01, green:0.36, blue:0.69, alpha:1).CGColor
+        let arrayColors = [cor1, cor2]
+        
+        gradient.colors = arrayColors
+        polarityGradientView.layer.insertSublayer(gradient, atIndex: 0)
         
         
         getSentimentTrends()
@@ -87,7 +99,7 @@ class MainAppViewController: UIViewController, ChartViewDelegate, UIPickerViewDe
             self.trendDirectionBackground.backgroundColor = UIColor(red:0.27, green:0.62, blue:0.1, alpha:1)
             self.arrowImageView.image = UIImage(named: "arrow_up")
         } else if self.polarityChange < 0 {
-            self.trendDirectionBackground.backgroundColor = UIColor.redColor()
+            self.trendDirectionBackground.backgroundColor = UIColor(red:0.01, green:0.36, blue:0.69, alpha:1)
             self.arrowImageView.image = UIImage(named: "arrow_down")
         } else {
             self.trendDirectionBackground.backgroundColor = UIColor(red:0.7, green:0.71, blue:0.71, alpha:1)
