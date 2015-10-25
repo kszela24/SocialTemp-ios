@@ -25,6 +25,10 @@ class MainAppViewController: UIViewController, ChartViewDelegate, UIPickerViewDe
     var polarityYaks:[Float] = []
     var pickerTimes = [String]()
     var polarityChange: Float = 0.0
+    var pickerDateIndex:Int = 0
+    
+    var currentAveragePolarity:Float = 0
+    var relativeSentiments = [Float]()
     
     override func viewDidLoad() {
         loadInfo()
@@ -62,27 +66,38 @@ class MainAppViewController: UIViewController, ChartViewDelegate, UIPickerViewDe
             let relativeSentiments = objects[1] as! [Float]
             let times = objects[2] as! [String]
             
+            self.currentAveragePolarity = currentAvgPolarity
+            self.relativeSentiments = relativeSentiments
             self.pickerTimes = times
             
             self.timePicker.delegate = self
             self.timePicker.dataSource = self
             
-            self.polarityChange = relativeSentiments[0]
+            self.pickerDateIndex = 0
             
-            if self.polarityChange > 0 {
-                self.trendDirectionBackground.backgroundColor = UIColor(red:0.27, green:0.62, blue:0.1, alpha:1)
-                self.arrowImageView.image = UIImage(named: "arrow_up")
-            } else {
-                self.trendDirectionBackground.backgroundColor = UIColor.redColor()
-                self.arrowImageView.image = UIImage(named: "arrow_down")
-            }
-            
-            self.polarityChangeLabel.text = "\(abs(self.polarityChange))"
+            self.updateTrendUI()
 
         }
     }
     
     
+    func updateTrendUI() {
+        self.polarityChange = self.relativeSentiments[self.pickerDateIndex]
+        if self.polarityChange > 0 {
+            self.trendDirectionBackground.backgroundColor = UIColor(red:0.27, green:0.62, blue:0.1, alpha:1)
+            self.arrowImageView.image = UIImage(named: "arrow_up")
+        } else if self.polarityChange < 0 {
+            self.trendDirectionBackground.backgroundColor = UIColor.redColor()
+            self.arrowImageView.image = UIImage(named: "arrow_down")
+        } else {
+            self.trendDirectionBackground.backgroundColor = UIColor(red:0.7, green:0.71, blue:0.71, alpha:1)
+            self.arrowImageView.image = UIImage(named: "no_change")
+        }
+        
+        self.polarityChangeLabel.text = "\(abs(self.polarityChange))%"
+    }
+    
+    // PickerView delegate methods
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -93,6 +108,11 @@ class MainAppViewController: UIViewController, ChartViewDelegate, UIPickerViewDe
     
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return self.pickerTimes.count
+    }
+    
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        self.pickerDateIndex = row
+        updateTrendUI()
     }
     
 }
