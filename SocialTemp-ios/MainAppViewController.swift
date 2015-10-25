@@ -12,6 +12,9 @@ import Charts
 
 class MainAppViewController: UIViewController, ChartViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
     
+    @IBOutlet weak var arrowImageView: UIImageView!
+    @IBOutlet weak var trendDirectionBackground: UIView!
+    @IBOutlet weak var polarityChangeLabel: UILabel!
     @IBOutlet weak var timePicker: UIPickerView!
     @IBOutlet var displayText: UILabel!
     @IBOutlet var chartView: LineChartView!
@@ -21,6 +24,7 @@ class MainAppViewController: UIViewController, ChartViewDelegate, UIPickerViewDe
     var polarityTweets:[Float] = []
     var polarityYaks:[Float] = []
     var pickerTimes = [String]()
+    var polarityChange: Float = 0.0
     
     override func viewDidLoad() {
         loadInfo()
@@ -34,7 +38,17 @@ class MainAppViewController: UIViewController, ChartViewDelegate, UIPickerViewDe
         self.timePicker.delegate = self
         self.timePicker.dataSource = self
         
+        self.polarityChange = -0.69
+        self.polarityChangeLabel.text = "\(abs(self.polarityChange))"
         pickerTimes = ["Yesterday", "Last Week"]
+        
+        if polarityChange > 0 {
+            trendDirectionBackground.backgroundColor = UIColor(red:0.27, green:0.62, blue:0.1, alpha:1)
+            arrowImageView.image = UIImage(named: "arrow_up")
+        } else {
+            trendDirectionBackground.backgroundColor = UIColor.redColor()
+            arrowImageView.image = UIImage(named: "arrow_down")
+        }
     }
 
     override func didReceiveMemoryWarning() {
