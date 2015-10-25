@@ -35,20 +35,8 @@ class MainAppViewController: UIViewController, ChartViewDelegate, UIPickerViewDe
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
         self.title = "SocialTempNU"
         
-        self.timePicker.delegate = self
-        self.timePicker.dataSource = self
         
-        self.polarityChange = -0.69
-        self.polarityChangeLabel.text = "\(abs(self.polarityChange))"
-        pickerTimes = ["Yesterday", "Last Week"]
-        
-        if polarityChange > 0 {
-            trendDirectionBackground.backgroundColor = UIColor(red:0.27, green:0.62, blue:0.1, alpha:1)
-            arrowImageView.image = UIImage(named: "arrow_up")
-        } else {
-            trendDirectionBackground.backgroundColor = UIColor.redColor()
-            arrowImageView.image = UIImage(named: "arrow_down")
-        }
+        getSentimentTrends()
     }
 
     override func didReceiveMemoryWarning() {
@@ -63,6 +51,36 @@ class MainAppViewController: UIViewController, ChartViewDelegate, UIPickerViewDe
         }
     }
     
+    private func getSentimentTrends() {
+        PFCloud.callFunctionInBackground("returnRelativeSentiment", withParameters: nil) {
+            (response: AnyObject?, error: NSError?) -> Void in
+            
+            
+            // what exactly is being returned? percent or something else?
+            let objects = response as! NSArray
+            let currentAvgPolarity = objects[0] as! Float
+            let relativeSentiments = objects[1] as! [Float]
+            let times = objects[2] as! [String]
+            
+            self.pickerTimes = times
+            
+            self.timePicker.delegate = self
+            self.timePicker.dataSource = self
+            
+            self.polarityChange = relativeSentiments[0]
+            
+            if self.polarityChange > 0 {
+                self.trendDirectionBackground.backgroundColor = UIColor(red:0.27, green:0.62, blue:0.1, alpha:1)
+                self.arrowImageView.image = UIImage(named: "arrow_up")
+            } else {
+                self.trendDirectionBackground.backgroundColor = UIColor.redColor()
+                self.arrowImageView.image = UIImage(named: "arrow_down")
+            }
+            
+            self.polarityChangeLabel.text = "\(abs(self.polarityChange))"
+
+        }
+    }
     
     
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
