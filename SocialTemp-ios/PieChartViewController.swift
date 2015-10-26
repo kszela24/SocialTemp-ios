@@ -16,8 +16,8 @@ class PieChartViewController: UIViewController {
         
         self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
         // Do any additional setup after loading the view.
-        let topics = ["sports", "school"]
-        let tally = [250.0, 700.0]
+        let topics = ["sports", "exams", "parties", "family", "celebrities", "other"]
+        let tally = [40.2, 10.3, 4.6, 3.7, 30.2, 11.0 ]
         setChart(topics, values: tally)
         
     }
@@ -33,7 +33,10 @@ class PieChartViewController: UIViewController {
         let pieChartDataSet = PieChartDataSet(yVals: dataEntries, label: "")
         let pieChartData = PieChartData(xVals: dataPoints, dataSet: pieChartDataSet)
         pieChartView.data = pieChartData
-        pieChartView.centerText = "Topical Distribution"
+        pieChartView.centerText = "What NU is Talking About"
+        pieChartView.centerTextLineBreakMode = NSLineBreakMode.ByWordWrapping
+        pieChartView.descriptionText = "Topics of NU Posts"
+        
         
         var colors: [UIColor] = []
         
