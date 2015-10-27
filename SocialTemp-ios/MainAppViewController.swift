@@ -17,9 +17,7 @@ class MainAppViewController: UIViewController, ChartViewDelegate, UIPickerViewDe
     @IBOutlet weak var trendDirectionBackground: UIView!
     @IBOutlet weak var polarityChangeLabel: UILabel!
     @IBOutlet weak var timePicker: UIPickerView!
-    @IBOutlet var displayText: UILabel!
-    @IBOutlet var chartView: LineChartView!
-    var times:[String] = []
+
     var percentages:[Int] = []
     var polarityCumulative:[Float] = []
     var polarityTweets:[Float] = []
@@ -39,20 +37,21 @@ class MainAppViewController: UIViewController, ChartViewDelegate, UIPickerViewDe
         self.navigationController?.navigationBar.barTintColor = UIColor(red: 67.0/255.0, green: 31.0/255.0, blue: 129.0/255.0, alpha: 1)
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
         self.title = "Social Temperature"
-        
-        
-        let gradient : CAGradientLayer = CAGradientLayer()
-        gradient.frame = polarityGradientView.bounds
-        
-        let cor1 = UIColor(red:0.27, green:0.62, blue:0.1, alpha:1).CGColor
-        let cor2 = UIColor(red:0.01, green:0.36, blue:0.69, alpha:1).CGColor
-        let arrayColors = [cor1, cor2]
-        
-        gradient.colors = arrayColors
-        polarityGradientView.layer.insertSublayer(gradient, atIndex: 0)
-        
-        
+
         getSentimentTrends()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        let topColor = UIColor(red:0.27, green:0.62, blue:0.1, alpha:1).CGColor
+        let bottomColor = UIColor(red:0.01, green:0.36, blue:0.69, alpha:1).CGColor
+
+        let gradientLayer = CAGradientLayer()
+        
+        gradientLayer.frame = self.polarityGradientView.bounds
+        gradientLayer.colors = [topColor,bottomColor]
+        gradientLayer.startPoint = CGPoint(x: 0, y: 0)
+        gradientLayer.endPoint = CGPoint(x: 0, y: 1)
+        self.polarityGradientView.layer.addSublayer(gradientLayer)
     }
 
     override func didReceiveMemoryWarning() {
@@ -63,7 +62,7 @@ class MainAppViewController: UIViewController, ChartViewDelegate, UIPickerViewDe
     private func loadInfo() {
         PFCloud.callFunctionInBackground("returnSentiment", withParameters: nil) {
             (response: AnyObject?, error: NSError?) -> Void in
-            _ = response as! NSArray
+            _ = response as? NSArray
         }
     }
     
