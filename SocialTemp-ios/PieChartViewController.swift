@@ -8,17 +8,33 @@
 
 import UIKit
 import Charts
+import Parse
 
 class PieChartViewController: UIViewController {
     @IBOutlet weak var pieChartView: PieChartView!
+    var tally:[Double] = [10.0, 12.0, 43.0, 5.0, 12.0, 21.0, 23.0, 40.0, 50.0, 60.0, 40.0, 23.0, 67.0, 78.0, 98.0, 10.0, 34.0, 70.0, 34.0, 67.0, 90.0, 30.0, 20.0]
+    
+    private func getTopics() {
+        PFCloud.callFunctionInBackground("returnTopics", withParameters: nil) {
+            (response: AnyObject?, error: NSError?) -> Void in
+            let objects = response as! NSArray
+            self.tally = objects[0] as! [Double]
+        }
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        //getTopics()
         self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
-        // Do any additional setup after loading the view.
-        let topics = ["sports", "exams", "parties", "family", "celebrities", "other"]
-        let tally = [40.2, 10.3, 4.6, 3.7, 30.2, 11.0 ]
-        setChart(topics, values: tally)
+        let topics = ["art and entertainment", "automotive and vehicles", "business and industrial",
+            "careers", "education", "family and parenting", "finance", "food and drink",
+            "health and fitness", "hobbies and interests", "home and garden", "law, govt and politics",
+            "news", "pets", "real estate", "religion and spirituality", "science",
+            "shopping", "society", "sports", "style and fashion", "technology and computing",
+            "travel"]
+        setChart(topics, values: self.tally)
+        
         
     }
     func setChart(dataPoints: [String], values: [Double]) {
@@ -36,7 +52,9 @@ class PieChartViewController: UIViewController {
         pieChartView.centerText = "What NU is Talking About"
         pieChartView.centerTextLineBreakMode = NSLineBreakMode.ByWordWrapping
         pieChartView.descriptionText = "Topics of NU Posts"
-        
+        pieChartView.usePercentValuesEnabled = true
+        pieChartView.transparentCircleRadiusPercent = 1
+        pieChartView.drawSliceTextEnabled = false
         
         var colors: [UIColor] = []
         
