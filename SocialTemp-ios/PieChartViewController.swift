@@ -12,31 +12,30 @@ import Parse
 
 class PieChartViewController: UIViewController {
     @IBOutlet weak var pieChartView: PieChartView!
-    var tally:[Double] = [10.0, 12.0, 43.0, 5.0, 12.0, 21.0, 23.0, 40.0, 50.0, 60.0, 40.0, 23.0, 67.0, 78.0, 98.0, 10.0, 34.0, 70.0, 34.0, 67.0, 90.0, 30.0, 20.0]
-    
+    var tally:[Double] = []
+    var topics:[String] = ["art and entertainment", "automotive and vehicles", "business and industrial",
+        "careers", "education", "family and parenting", "finance", "food and drink",
+        "health and fitness", "hobbies and interests", "home and garden", "law, govt and politics",
+        "news", "pets", "real estate", "religion and spirituality", "science",
+        "shopping", "society", "sports", "style and fashion", "technology and computing",
+        "travel"]
     private func getTopics() {
         PFCloud.callFunctionInBackground("returnTopics", withParameters: nil) {
             (response: AnyObject?, error: NSError?) -> Void in
             let objects = response as! NSArray
             self.tally = objects[0] as! [Double]
+            self.setChart(self.topics, values: self.tally)
         }
     }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //getTopics()
+        
         self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
-        let topics = ["art and entertainment", "automotive and vehicles", "business and industrial",
-            "careers", "education", "family and parenting", "finance", "food and drink",
-            "health and fitness", "hobbies and interests", "home and garden", "law, govt and politics",
-            "news", "pets", "real estate", "religion and spirituality", "science",
-            "shopping", "society", "sports", "style and fashion", "technology and computing",
-            "travel"]
-        setChart(topics, values: self.tally)
-        
-        
+        getTopics()
     }
+    
     func setChart(dataPoints: [String], values: [Double]) {
         
         var dataEntries: [ChartDataEntry] = []
