@@ -40,15 +40,13 @@ class PieChartViewController: UIViewController {
             let dataEntry = ChartDataEntry(value: values[i], xIndex: i)
             dataEntries.append(dataEntry)
         }
-        
         let pieChartDataSet = PieChartDataSet(yVals: dataEntries, label: "")
         let pieChartData = PieChartData(xVals: dataPoints, dataSet: pieChartDataSet)
         pieChartView.data = pieChartData
-        pieChartView.centerText = "What NU is Talking About"
+        pieChartView.centerText = "What is NU Talking About?"
         pieChartView.centerTextLineBreakMode = NSLineBreakMode.ByWordWrapping
         pieChartView.descriptionText = "Topics of NU Posts"
         pieChartView.usePercentValuesEnabled = true
-        pieChartView.transparentCircleRadiusPercent = 1
         pieChartView.drawSliceTextEnabled = false
         
         var colors: [UIColor] = []
@@ -59,9 +57,12 @@ class PieChartViewController: UIViewController {
             let blue = Double(arc4random_uniform(256))
             colors.append(UIColor(red: CGFloat(red/255), green: CGFloat(green/255), blue: CGFloat(blue/255), alpha: 1))
         }
-        
+       
         pieChartDataSet.colors = colors
         
+        pieChartView.legendRenderer.computeLegend(pieChartData)
+        pieChartView.legend.calculatedLabelBreakPoints = [false, false, false, true, false, false]
+        pieChartView.legend.neededHeight = 20.0
         
     }
 
