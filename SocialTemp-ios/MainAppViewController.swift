@@ -115,7 +115,7 @@ class MainAppViewController: UIViewController, ChartViewDelegate, UIPickerViewDe
             self.arrowImageView.image = UIImage(named: "no_change")
         }
         
-        otherDayLabel.text = self.pickerTimes[pickerDateIndex]
+        otherDayLabel.text = "-\(self.pickerTimes[pickerDateIndex])"
         self.polarityChangeLabel.text = "\(abs(self.polarityChange))%"
         
     }
@@ -131,9 +131,6 @@ class MainAppViewController: UIViewController, ChartViewDelegate, UIPickerViewDe
             multiplier: 1,
             constant: gradientHeight/2 + CGFloat(currentAveragePolarity) * gradientHeight/2)
         view.addConstraint(todayLabelYConstraint)
-        print(currentAveragePolarity)
-        print(relativeSentiments)
-        print(dailyAveragePolarities)
       
         todayLabel.layer.zPosition = 1
         otherDayLabel.layer.zPosition = 1
@@ -153,6 +150,16 @@ class MainAppViewController: UIViewController, ChartViewDelegate, UIPickerViewDe
         })
     }
     
+    func updateOtherDayMarker() {
+        let gradientHeight = polarityGradientView.frame.height
+        self.view.layoutIfNeeded()
+        UIView.animateWithDuration(1, animations: {
+            self.otherDayLabelYConstraint!.constant = gradientHeight/2 + CGFloat(self.dailyAveragePolarities[self.pickerDateIndex]) * gradientHeight/2
+            self.view.layoutIfNeeded()
+        })
+    
+    }
+    
     // PickerView delegate methods
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
         return 1
@@ -169,6 +176,7 @@ class MainAppViewController: UIViewController, ChartViewDelegate, UIPickerViewDe
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         self.pickerDateIndex = row
         updateTrendUI()
+        updateOtherDayMarker()
         
         // TODO update other day marker position, update constraint
     }
