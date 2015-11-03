@@ -116,7 +116,8 @@ class MainAppViewController: UIViewController, ChartViewDelegate, UIPickerViewDe
         }
         
         otherDayLabel.text = "-\(self.pickerTimes[pickerDateIndex])"
-        self.polarityChangeLabel.text = "\(abs(self.polarityChange))%"
+        let polarityChangeSinceX = ((self.currentAveragePolarity - self.dailyAveragePolarities[pickerDateIndex]) / 2) * 100
+        self.polarityChangeLabel.text = String(format: "%.2f", abs(polarityChangeSinceX)) + "%"
         
     }
     
