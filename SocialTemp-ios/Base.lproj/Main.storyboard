@@ -194,6 +194,7 @@
                         <outlet property="polarityChangeLabel" destination="Nnh-Bz-gog" id="0e2-Jk-pPj"/>
                         <outlet property="polarityGradientView" destination="8lK-aH-A9I" id="eeQ-wS-vjX"/>
                         <outlet property="timePicker" destination="P1u-Ay-Vov" id="zAG-fV-rat"/>
+                        <outlet property="todayFeelingLabel" destination="Txx-5g-ekL" id="Hdf-YW-xgb"/>
                         <outlet property="todayLabel" destination="dDc-5r-iZQ" id="Vcv-8y-SoR"/>
                         <outlet property="trendDirectionBackground" destination="GkQ-Tb-LeN" id="grd-yi-oTA"/>
                     </connections>

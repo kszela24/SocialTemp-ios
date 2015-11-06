@@ -19,6 +19,7 @@ class MainAppViewController: UIViewController, ChartViewDelegate, UIPickerViewDe
     @IBOutlet weak var trendDirectionBackground: UIView!
     @IBOutlet weak var polarityChangeLabel: UILabel!
     @IBOutlet weak var timePicker: UIPickerView!
+    @IBOutlet weak var todayFeelingLabel: UILabel!
 
 
 
@@ -87,6 +88,8 @@ class MainAppViewController: UIViewController, ChartViewDelegate, UIPickerViewDe
             let dailyAveragePolarities = objects[3] as! [Float]
             
             self.currentAveragePolarity = currentAvgPolarity
+            self.setSentimentTier()
+            
             self.relativeSentiments = relativeSentiments
             self.pickerTimes = times
             self.dailyAveragePolarities = dailyAveragePolarities
@@ -99,6 +102,7 @@ class MainAppViewController: UIViewController, ChartViewDelegate, UIPickerViewDe
             self.updateTrendUI()
             
             self.placeGradientMarkers()
+            
         }
     }
     
@@ -118,7 +122,7 @@ class MainAppViewController: UIViewController, ChartViewDelegate, UIPickerViewDe
         
         otherDayLabel.text = "-\(self.pickerTimes[pickerDateIndex])"
         let polarityChangeSinceX = ((self.currentAveragePolarity - self.dailyAveragePolarities[pickerDateIndex]) / 2) * 100
-        self.polarityChangeLabel.text = String(format: "%.2f", abs(polarityChangeSinceX)) + "%"
+        self.polarityChangeLabel.text = String(format: "%.1f", abs(polarityChangeSinceX)) + "%"
         
     }
     
@@ -160,6 +164,24 @@ class MainAppViewController: UIViewController, ChartViewDelegate, UIPickerViewDe
             self.view.layoutIfNeeded()
         })
     
+    }
+    
+    func setSentimentTier() {
+        if currentAveragePolarity < -0.75 {
+            // set color to blue, "very negative"
+        } else if currentAveragePolarity < -0.25 {
+            // set color to blue, "negative"
+        } else if currentAveragePolarity < 0 {
+            // set color to blue, "somewhat negative"
+        } else if currentAveragePolarity < 0.25 {
+            // set color to green, "somewhat positive"
+            todayFeelingLabel.textColor = UIColor(red:0, green:0.84, blue:0.4, alpha:1)
+            todayFeelingLabel.text = "Northwestern is feeling slighty positive today."
+        } else if currentAveragePolarity < 0.75 {
+            // set color to green, "positive"
+        } else {
+            // set color to green, "very positive today!"
+        }
     }
     
     // PickerView delegate methods
