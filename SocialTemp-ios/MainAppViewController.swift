@@ -39,6 +39,7 @@ class MainAppViewController: UIViewController, ChartViewDelegate, UIPickerViewDe
     override func viewDidLoad() {
         loadInfo()
         super.viewDidLoad()
+        view.backgroundColor = UIColor(red:0.24, green:0.24, blue:0.25, alpha:1)
         
         //NavBar
         self.navigationController?.navigationBar.barTintColor = UIColor(red: 67.0/255.0, green: 31.0/255.0, blue: 129.0/255.0, alpha: 1)
@@ -166,10 +167,6 @@ class MainAppViewController: UIViewController, ChartViewDelegate, UIPickerViewDe
         return 1
     }
     
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return self.pickerTimes[row]
-    }
-    
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return self.pickerTimes.count
     }
@@ -178,8 +175,11 @@ class MainAppViewController: UIViewController, ChartViewDelegate, UIPickerViewDe
         self.pickerDateIndex = row
         updateTrendUI()
         updateOtherDayMarker()
-        
-        // TODO update other day marker position, update constraint
+    }
+    
+    func pickerView(pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        let attributedString = NSAttributedString(string: self.pickerTimes[row], attributes: [NSForegroundColorAttributeName : UIColor.whiteColor()])
+        return attributedString
     }
     
 }
