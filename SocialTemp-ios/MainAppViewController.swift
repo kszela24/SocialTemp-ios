@@ -13,7 +13,8 @@ import Charts
 class MainAppViewController: UIViewController, ChartViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
     
     @IBOutlet weak var otherDayLabel: UILabel!
-    @IBOutlet weak var todayLabel: UILabel!
+    @IBOutlet weak var todayMarker: UIView!
+    @IBOutlet weak var otherDayMarker: UIView!
     @IBOutlet weak var polarityGradientView: UIView!
     @IBOutlet weak var arrowImageView: UIImageView!
     @IBOutlet weak var trendDirectionBackground: UIView!
@@ -35,7 +36,7 @@ class MainAppViewController: UIViewController, ChartViewDelegate, UIPickerViewDe
     var relativeSentiments = [Float]()
     var dailyAveragePolarities = [Float]()
     
-    var otherDayLabelYConstraint: NSLayoutConstraint?
+    var otherDayMarkerYConstraint: NSLayoutConstraint?
     
     override func viewDidLoad() {
         loadInfo()
@@ -120,7 +121,7 @@ class MainAppViewController: UIViewController, ChartViewDelegate, UIPickerViewDe
             self.arrowImageView.image = UIImage(named: "no_change")
         }
         
-        otherDayLabel.text = "-\(self.pickerTimes[pickerDateIndex])"
+        otherDayLabel.text = "\(self.pickerTimes[pickerDateIndex])"
         let polarityChangeSinceX = ((self.currentAveragePolarity - self.dailyAveragePolarities[pickerDateIndex]) / 2) * 100
         self.polarityChangeLabel.text = String(format: "%.1f", abs(polarityChangeSinceX)) + "%"
         
@@ -129,30 +130,30 @@ class MainAppViewController: UIViewController, ChartViewDelegate, UIPickerViewDe
     func placeGradientMarkers() {
         let gradientHeight = polarityGradientView.frame.height
         
-        let todayLabelYConstraint = NSLayoutConstraint (item: polarityGradientView,
+        let todayMarkerYConstraint = NSLayoutConstraint (item: polarityGradientView,
             attribute: NSLayoutAttribute.Bottom,
             relatedBy: NSLayoutRelation.Equal,
-            toItem: todayLabel,
+            toItem: todayMarker,
             attribute: NSLayoutAttribute.CenterY,
             multiplier: 1,
             constant: gradientHeight/2 + CGFloat(currentAveragePolarity) * gradientHeight/2)
-        view.addConstraint(todayLabelYConstraint)
+        view.addConstraint(todayMarkerYConstraint)
       
-        todayLabel.layer.zPosition = 1
-        otherDayLabel.layer.zPosition = 1
+        todayMarker.layer.zPosition = 1
+        otherDayMarker.layer.zPosition = 1
         
-        otherDayLabelYConstraint = NSLayoutConstraint (item: polarityGradientView,
+        otherDayMarkerYConstraint = NSLayoutConstraint (item: polarityGradientView,
             attribute: NSLayoutAttribute.Bottom,
             relatedBy: NSLayoutRelation.Equal,
-            toItem: otherDayLabel,
+            toItem: otherDayMarker,
             attribute: NSLayoutAttribute.CenterY,
             multiplier: 1,
             constant: gradientHeight/2 + CGFloat(dailyAveragePolarities[pickerDateIndex]) * gradientHeight/2)
-        view.addConstraint(otherDayLabelYConstraint!)
+        view.addConstraint(otherDayMarkerYConstraint!)
         
         UILabel.animateWithDuration(1, animations: {
-            self.todayLabel.layoutIfNeeded()
-            self.otherDayLabel.layoutIfNeeded()
+            self.todayMarker.layoutIfNeeded()
+            self.otherDayMarker.layoutIfNeeded()
         })
     }
     
@@ -160,7 +161,7 @@ class MainAppViewController: UIViewController, ChartViewDelegate, UIPickerViewDe
         let gradientHeight = polarityGradientView.frame.height
         self.view.layoutIfNeeded()
         UIView.animateWithDuration(1, animations: {
-            self.otherDayLabelYConstraint!.constant = gradientHeight/2 + CGFloat(self.dailyAveragePolarities[self.pickerDateIndex]) * gradientHeight/2
+            self.otherDayMarkerYConstraint!.constant = gradientHeight/2 + CGFloat(self.dailyAveragePolarities[self.pickerDateIndex]) * gradientHeight/2
             self.view.layoutIfNeeded()
         })
     
@@ -176,7 +177,7 @@ class MainAppViewController: UIViewController, ChartViewDelegate, UIPickerViewDe
         } else if currentAveragePolarity < 0.25 {
             // set color to green, "somewhat positive"
             todayFeelingLabel.textColor = UIColor(red:0, green:0.84, blue:0.4, alpha:1)
-            todayFeelingLabel.text = "Northwestern is feeling slighty positive today."
+            todayFeelingLabel.text = "Northwestern is feeling slightly positive today."
         } else if currentAveragePolarity < 0.75 {
             // set color to green, "positive"
         } else {
