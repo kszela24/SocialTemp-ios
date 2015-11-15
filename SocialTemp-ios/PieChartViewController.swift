@@ -12,17 +12,29 @@ import Parse
 
 class PieChartViewController: UIViewController {
     @IBOutlet weak var pieChartView: PieChartView!
-    var tally:[Double] = []
+    @IBOutlet weak var radarChartView: RadarChartView!
+    var topicTally:[Double] = []
     var topics:[String] = []
+    var emotionTally:[Double] = []
+    var emotions:[String] = []
     private func getTopics() {
         PFCloud.callFunctionInBackground("returnTopics", withParameters: nil) {
             (response: AnyObject?, error: NSError?) -> Void in
             let objects = response as! NSArray
-            self.tally = objects[0] as! [Double]
+            self.topicTally = objects[0] as! [Double]
             self.topics = objects[1] as! [String]
-            self.setChart(self.topics, values: self.tally)
+            self.setPieChart(self.topics, values: self.topicTally)
         }
     }
+//    private func getEmotions() {
+//        PFCloud.callFunctionInBackground("returnEmotions", withParameters: nil) {
+//            (response: AnyObject?, error: NSError?) -> Void in
+//            let objects = response as! NSArray
+//            self.emotionTally = objects[0] as! [Double]
+//            self.emotions = objects[1] as! [String]
+//            self.setRadarChart(self.emotions, values: self.emotionTally)
+//        }
+//    }
     
     
     override func viewDidLoad() {
@@ -31,9 +43,13 @@ class PieChartViewController: UIViewController {
         
         self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
         getTopics()
+        //getEmotions()
+        let emotionTally1 = [1.0, 5.0, 20.0, 15.0, 7.0]
+        let emotions1 = ["joy", "sadness", "anger", "fear", "excitment"]
+        self.setRadarChart(emotions1, values: emotionTally1)
     }
     
-    func setChart(dataPoints: [String], values: [Double]) {
+    func setPieChart(dataPoints: [String], values: [Double]) {
         
         var dataEntries: [ChartDataEntry] = []
         
@@ -66,12 +82,36 @@ class PieChartViewController: UIViewController {
         pieChartView.legend.neededHeight = 20.0
         
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        
-        // Dispose of any resources that can be recreated.
-    }
+    
+//    func setRadarChart(dataPoints: [String], values: [Double]) {
+//        
+//        var dataEntries: [ChartDataEntry] = []
+//        
+//        for i in 0..<dataPoints.count {
+//            let dataEntry = ChartDataEntry(value: values[i], xIndex: i)
+//            dataEntries.append(dataEntry)
+//        }
+//        let radarChartDataSet = RadarChartDataSet(yVals: dataEntries, label: "")
+//        let radarChartData = RadarChartData(xVals: dataEntries, dataSet: radarChartDataSet)
+//        radarChartView.data = radarChartData
+//        
+//        var colors: [UIColor] = []
+//        
+//        for _ in 0..<dataPoints.count {
+//            let red = Double(arc4random_uniform(256))
+//            let green = Double(arc4random_uniform(256))
+//            let blue = Double(arc4random_uniform(256))
+//            colors.append(UIColor(red: CGFloat(red/255), green: CGFloat(green/255), blue: CGFloat(blue/255), alpha: 1))
+//        }
+//        
+//        
+//    }
+//
+//    override func didReceiveMemoryWarning() {
+//        super.didReceiveMemoryWarning()
+//        
+//        // Dispose of any resources that can be recreated.
+//    }
     
 
     /*
