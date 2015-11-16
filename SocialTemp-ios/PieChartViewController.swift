@@ -24,19 +24,18 @@ class PieChartViewController: UIViewController {
             self.topicTally = objects[0] as! [Double]
             self.topics = objects[1] as! [String]
             self.setTopicChart(self.topics, values: self.topicTally)
-            self.setEmotionChart(self.topics, values: self.topicTally)
         }
     }
-//    private func getEmotions() {
-//        PFCloud.callFunctionInBackground("returnEmotions", withParameters: nil) {
-//            (response: AnyObject?, error: NSError?) -> Void in
-//            let objects = response as! NSArray
-//            self.emotionTally = objects[0] as! [Double]
-//            self.emotions = objects[1] as! [String]
-//            self.setEmotionChart(self.emotions, values: self.emotionTally)
-//        }
-//    }
-//    
+    private func getEmotions() {
+        PFCloud.callFunctionInBackground("returnEmotions", withParameters: nil) {
+            (response: AnyObject?, error: NSError?) -> Void in
+            let objects = response as! NSArray
+            self.emotionTally = objects[0] as! [Double]
+            self.emotions = objects[1] as! [String]
+            self.setEmotionChart(self.emotions, values: self.emotionTally)
+        }
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,7 +43,7 @@ class PieChartViewController: UIViewController {
         
         self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
         getTopics()
-        //getEmotions()
+        getEmotions()
         
     }
     
