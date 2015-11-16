@@ -275,7 +275,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9dW-5l-Nf0" customClass="PieChartView" customModule="Charts">
-                                <rect key="frame" x="36" y="346" width="236" height="190"/>
+                                <rect key="frame" x="41" y="347" width="236" height="190"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -289,7 +289,7 @@
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="bwY-RI-sNA" secondAttribute="trailing" constant="-9" id="5eb-DJ-mcp"/>
                             <constraint firstItem="9dW-5l-Nf0" firstAttribute="centerX" secondItem="2Th-ix-pCX" secondAttribute="centerX" id="9e7-bt-ufm"/>
-                            <constraint firstItem="9dW-5l-Nf0" firstAttribute="top" secondItem="bwY-RI-sNA" secondAttribute="bottom" constant="47" id="G1j-fa-GLT"/>
+                            <constraint firstItem="9dW-5l-Nf0" firstAttribute="top" secondItem="bwY-RI-sNA" secondAttribute="bottom" constant="46" id="G1j-fa-GLT"/>
                             <constraint firstItem="bwY-RI-sNA" firstAttribute="top" secondItem="4U6-vv-nPi" secondAttribute="bottom" constant="8" id="nFf-lH-Fgo"/>
                             <constraint firstItem="bwY-RI-sNA" firstAttribute="leading" secondItem="2Th-ix-pCX" secondAttribute="leadingMargin" constant="-8" id="t9D-Y2-rEQ"/>
                         </constraints>
