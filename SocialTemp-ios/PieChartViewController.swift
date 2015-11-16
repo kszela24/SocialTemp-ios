@@ -11,8 +11,8 @@ import Charts
 import Parse
 
 class PieChartViewController: UIViewController {
-    @IBOutlet weak var pieChartView: PieChartView!
-    @IBOutlet weak var radarChartView: RadarChartView!
+    @IBOutlet weak var topicPieChartView: PieChartView!
+    @IBOutlet weak var emotionPieChartView: PieChartView!
     var topicTally:[Double] = []
     var topics:[String] = []
     var emotionTally:[Double] = []
@@ -23,7 +23,8 @@ class PieChartViewController: UIViewController {
             let objects = response as! NSArray
             self.topicTally = objects[0] as! [Double]
             self.topics = objects[1] as! [String]
-            self.setPieChart(self.topics, values: self.topicTally)
+            self.setTopicChart(self.topics, values: self.topicTally)
+            self.setEmotionChart(self.topics, values: self.topicTally)
         }
     }
 //    private func getEmotions() {
@@ -32,10 +33,10 @@ class PieChartViewController: UIViewController {
 //            let objects = response as! NSArray
 //            self.emotionTally = objects[0] as! [Double]
 //            self.emotions = objects[1] as! [String]
-//            self.setRadarChart(self.emotions, values: self.emotionTally)
+//            self.setEmotionChart(self.emotions, values: self.emotionTally)
 //        }
 //    }
-    
+//    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,12 +45,10 @@ class PieChartViewController: UIViewController {
         self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
         getTopics()
         //getEmotions()
-        let emotionTally1 = [1.0, 5.0, 20.0, 15.0, 7.0]
-        let emotions1 = ["joy", "sadness", "anger", "fear", "excitment"]
-        self.setRadarChart(emotions1, values: emotionTally1)
+        
     }
     
-    func setPieChart(dataPoints: [String], values: [Double]) {
+    func setTopicChart(dataPoints: [String], values: [Double]) {
         
         var dataEntries: [ChartDataEntry] = []
         
@@ -59,12 +58,12 @@ class PieChartViewController: UIViewController {
         }
         let pieChartDataSet = PieChartDataSet(yVals: dataEntries, label: "")
         let pieChartData = PieChartData(xVals: dataPoints, dataSet: pieChartDataSet)
-        pieChartView.data = pieChartData
-        pieChartView.centerText = "What is NU Talking About?"
-        pieChartView.centerTextLineBreakMode = NSLineBreakMode.ByWordWrapping
-        pieChartView.descriptionText = "Topics of NU Posts"
-        pieChartView.usePercentValuesEnabled = true
-        pieChartView.drawSliceTextEnabled = false
+        topicPieChartView.data = pieChartData
+        topicPieChartView.centerText = "What is NU Talking About?"
+        topicPieChartView.centerTextLineBreakMode = NSLineBreakMode.ByWordWrapping
+        topicPieChartView.descriptionText = "Topics of NU Posts"
+        topicPieChartView.usePercentValuesEnabled = true
+        topicPieChartView.drawSliceTextEnabled = false
         
         var colors: [UIColor] = []
         
@@ -77,41 +76,51 @@ class PieChartViewController: UIViewController {
        
         pieChartDataSet.colors = colors
         
-        pieChartView.legendRenderer.computeLegend(pieChartData)
-        pieChartView.legend.calculatedLabelBreakPoints = [false, false, false, true, false, false]
-        pieChartView.legend.neededHeight = 20.0
+        topicPieChartView.legendRenderer.computeLegend(pieChartData)
+        topicPieChartView.legend.calculatedLabelBreakPoints = [false, false, false, true, false, false]
+        topicPieChartView.legend.neededHeight = 20.0
         
     }
     
-//    func setRadarChart(dataPoints: [String], values: [Double]) {
-//        
-//        var dataEntries: [ChartDataEntry] = []
-//        
-//        for i in 0..<dataPoints.count {
-//            let dataEntry = ChartDataEntry(value: values[i], xIndex: i)
-//            dataEntries.append(dataEntry)
-//        }
-//        let radarChartDataSet = RadarChartDataSet(yVals: dataEntries, label: "")
-//        let radarChartData = RadarChartData(xVals: dataEntries, dataSet: radarChartDataSet)
-//        radarChartView.data = radarChartData
-//        
-//        var colors: [UIColor] = []
-//        
-//        for _ in 0..<dataPoints.count {
-//            let red = Double(arc4random_uniform(256))
-//            let green = Double(arc4random_uniform(256))
-//            let blue = Double(arc4random_uniform(256))
-//            colors.append(UIColor(red: CGFloat(red/255), green: CGFloat(green/255), blue: CGFloat(blue/255), alpha: 1))
-//        }
-//        
-//        
-//    }
-//
-//    override func didReceiveMemoryWarning() {
-//        super.didReceiveMemoryWarning()
-//        
-//        // Dispose of any resources that can be recreated.
-//    }
+    func setEmotionChart(dataPoints: [String], values: [Double]) {
+        
+        var dataEntries: [ChartDataEntry] = []
+        
+        for i in 0..<dataPoints.count {
+            let dataEntry = ChartDataEntry(value: values[i], xIndex: i)
+            dataEntries.append(dataEntry)
+        }
+        let pieChartDataSet = PieChartDataSet(yVals: dataEntries, label: "")
+        let pieChartData = PieChartData(xVals: dataEntries, dataSet: pieChartDataSet)
+        emotionPieChartView.data = pieChartData
+        emotionPieChartView.centerText = "How is NU Feeling?"
+        emotionPieChartView.centerTextLineBreakMode = NSLineBreakMode.ByWordWrapping
+        emotionPieChartView.descriptionText = "Emotions in NU Posts"
+        emotionPieChartView.usePercentValuesEnabled = true
+        emotionPieChartView.drawSliceTextEnabled = false
+        
+        var colors: [UIColor] = []
+        
+        for _ in 0..<dataPoints.count {
+            let red = Double(arc4random_uniform(256))
+            let green = Double(arc4random_uniform(256))
+            let blue = Double(arc4random_uniform(256))
+            colors.append(UIColor(red: CGFloat(red/255), green: CGFloat(green/255), blue: CGFloat(blue/255), alpha: 1))
+        }
+        
+        pieChartDataSet.colors = colors
+        
+        topicPieChartView.legendRenderer.computeLegend(pieChartData)
+        topicPieChartView.legend.calculatedLabelBreakPoints = [false, false, false, true, false, false]
+        topicPieChartView.legend.neededHeight = 20.0
+        
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        
+        // Dispose of any resources that can be recreated.
+    }
     
 
     /*
