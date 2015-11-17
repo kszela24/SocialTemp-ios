@@ -63,6 +63,8 @@ class PieChartViewController: UIViewController {
         topicPieChartView.descriptionText = "Topics of NU Posts"
         topicPieChartView.usePercentValuesEnabled = true
         topicPieChartView.drawSliceTextEnabled = false
+        topicPieChartView.descriptionTextColor = UIColor.whiteColor()
+        topicPieChartView.legend.textColor = UIColor.whiteColor()
         
         var colors: [UIColor] = []
         
@@ -90,13 +92,16 @@ class PieChartViewController: UIViewController {
             dataEntries.append(dataEntry)
         }
         let pieChartDataSet = PieChartDataSet(yVals: dataEntries, label: "")
-        let pieChartData = PieChartData(xVals: dataEntries, dataSet: pieChartDataSet)
+        let pieChartData = PieChartData(xVals: dataPoints, dataSet: pieChartDataSet)
         emotionPieChartView.data = pieChartData
-        emotionPieChartView.centerText = "How is NU Feeling?"
+        emotionPieChartView.centerText = "How is NU feeling?"
         emotionPieChartView.centerTextLineBreakMode = NSLineBreakMode.ByWordWrapping
-        emotionPieChartView.descriptionText = "Emotions in NU Posts"
+        emotionPieChartView.descriptionText = "Emotions of NU Posts"
         emotionPieChartView.usePercentValuesEnabled = true
         emotionPieChartView.drawSliceTextEnabled = false
+        emotionPieChartView.descriptionTextColor = UIColor.whiteColor()
+        emotionPieChartView.legend.textColor = UIColor.whiteColor()
+        emotionPieChartView.backgroundColor = UIColor.darkGrayColor()
         
         var colors: [UIColor] = []
         
@@ -110,8 +115,10 @@ class PieChartViewController: UIViewController {
         pieChartDataSet.colors = colors
         
         emotionPieChartView.legendRenderer.computeLegend(pieChartData)
-        emotionPieChartView.legend.neededHeight = 20.0
+        emotionPieChartView.legend.calculatedLabelBreakPoints = [false, false, false, false, true, false, false]
         
+
+        emotionPieChartView.legend.neededHeight = 20.0
         
     }
 

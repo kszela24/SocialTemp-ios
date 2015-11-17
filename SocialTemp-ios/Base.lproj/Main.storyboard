@@ -244,15 +244,12 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9dW-5l-Nf0" customClass="PieChartView" customModule="Charts">
-                                <rect key="frame" x="7" y="330" width="361" height="200"/>
+                                <rect key="frame" x="7" y="330" width="361" height="297"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="b3J-KA-XIz"/>
-                                </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="umg-z4-7hz">
-                                <rect key="frame" x="36" y="538" width="248" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="umg-z4-7hz">
+                                <rect key="frame" x="63" y="629" width="248" height="30"/>
                                 <animations/>
                                 <state key="normal" title="How is NU feeling about each topic?"/>
                                 <connections>
@@ -268,7 +265,10 @@
                             <constraint firstAttribute="trailingMargin" secondItem="9dW-5l-Nf0" secondAttribute="trailing" constant="-9" id="CvL-AT-OZQ"/>
                             <constraint firstItem="9dW-5l-Nf0" firstAttribute="leading" secondItem="2Th-ix-pCX" secondAttribute="leadingMargin" constant="-9" id="EUr-XA-tz7"/>
                             <constraint firstItem="9dW-5l-Nf0" firstAttribute="top" secondItem="bwY-RI-sNA" secondAttribute="bottom" constant="8" symbolic="YES" id="G1j-fa-GLT"/>
+                            <constraint firstItem="3L3-wQ-ogU" firstAttribute="top" secondItem="9dW-5l-Nf0" secondAttribute="bottom" constant="40" id="MGg-72-u5S"/>
+                            <constraint firstItem="3L3-wQ-ogU" firstAttribute="top" secondItem="umg-z4-7hz" secondAttribute="bottom" constant="8" id="SKT-rD-tYf"/>
                             <constraint firstItem="bwY-RI-sNA" firstAttribute="top" secondItem="4U6-vv-nPi" secondAttribute="bottom" constant="8" id="nFf-lH-Fgo"/>
+                            <constraint firstItem="umg-z4-7hz" firstAttribute="centerX" secondItem="2Th-ix-pCX" secondAttribute="centerX" id="qVf-Pj-ddl"/>
                             <constraint firstItem="bwY-RI-sNA" firstAttribute="leading" secondItem="2Th-ix-pCX" secondAttribute="leadingMargin" constant="-8" id="t9D-Y2-rEQ"/>
                         </constraints>
                     </view>
