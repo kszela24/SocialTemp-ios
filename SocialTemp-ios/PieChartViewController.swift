@@ -75,6 +75,8 @@ class PieChartViewController: UIViewController {
        
         pieChartDataSet.colors = colors
         
+        topicPieChartView.legend.textColor = UIColor.whiteColor()
+        topicPieChartView.descriptionTextColor = UIColor.whiteColor()
         topicPieChartView.legendRenderer.computeLegend(pieChartData)
         topicPieChartView.legend.calculatedLabelBreakPoints = [false, false, false, true, false, false]
         topicPieChartView.legend.neededHeight = 20.0
@@ -94,6 +96,7 @@ class PieChartViewController: UIViewController {
         emotionPieChartView.data = pieChartData
         emotionPieChartView.centerText = "How is NU Feeling?"
         emotionPieChartView.centerTextLineBreakMode = NSLineBreakMode.ByWordWrapping
+        emotionPieChartView.descriptionTextColor = UIColor.whiteColor()
         emotionPieChartView.descriptionText = "Emotions in NU Posts"
         emotionPieChartView.usePercentValuesEnabled = true
         emotionPieChartView.drawSliceTextEnabled = false
@@ -108,6 +111,8 @@ class PieChartViewController: UIViewController {
         }
         
         pieChartDataSet.colors = colors
+        
+        emotionPieChartView.legend.textColor = UIColor.whiteColor()
         
         emotionPieChartView.legendRenderer.computeLegend(pieChartData)
         emotionPieChartView.legend.neededHeight = 20.0
