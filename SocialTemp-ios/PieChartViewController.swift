@@ -77,6 +77,8 @@ class PieChartViewController: UIViewController {
        
         pieChartDataSet.colors = colors
         
+        topicPieChartView.legend.textColor = UIColor.whiteColor()
+        topicPieChartView.descriptionTextColor = UIColor.whiteColor()
         topicPieChartView.legendRenderer.computeLegend(pieChartData)
         topicPieChartView.legend.calculatedLabelBreakPoints = [false, false, false, true, false, false]
         topicPieChartView.legend.neededHeight = 20.0
@@ -113,6 +115,8 @@ class PieChartViewController: UIViewController {
         }
         
         pieChartDataSet.colors = colors
+        
+        emotionPieChartView.legend.textColor = UIColor.whiteColor()
         
         emotionPieChartView.legendRenderer.computeLegend(pieChartData)
         emotionPieChartView.legend.calculatedLabelBreakPoints = [false, false, false, false, true, false, false]
