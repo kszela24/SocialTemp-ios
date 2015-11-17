@@ -32,6 +32,7 @@ class PolarityViewController: UIViewController {
         getTopics()
     }
     
+    
     func setPolarityChart(dataPoints: [String], values: [Double]) {
         
         var dataEntries: [ChartDataEntry] = []
@@ -41,7 +42,7 @@ class PolarityViewController: UIViewController {
             dataEntries.append(dataEntry)
         }
         let pieChartDataSet = PieChartDataSet(yVals: dataEntries, label: "")
-        let pieChartData = PieChartData(xVals: dataEntries, dataSet: pieChartDataSet)
+        let pieChartData = PieChartData(xVals: dataPoints, dataSet: pieChartDataSet)
         polarityPieChartView.data = pieChartData
         polarityPieChartView.centerText = "How is NU Feeling?"
         polarityPieChartView.centerTextLineBreakMode = NSLineBreakMode.ByWordWrapping
@@ -61,8 +62,8 @@ class PolarityViewController: UIViewController {
         pieChartDataSet.colors = colors
         
         polarityPieChartView.legendRenderer.computeLegend(pieChartData)
+        polarityPieChartView.legend.calculatedLabelBreakPoints = [false, false, false, true, false, false]
         polarityPieChartView.legend.neededHeight = 20.0
-        
         
     }
 
