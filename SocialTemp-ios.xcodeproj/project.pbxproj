@@ -18,6 +18,7 @@
 		2727C2DD1BC8463E0084FDBB /* MainAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2727C2DC1BC8463E0084FDBB /* MainAppViewController.swift */; };
 		2727C2DF1BC8515C0084FDBB /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2727C2DE1BC8515C0084FDBB /* NavigationController.swift */; };
 		27C3C96D1BDACD6F00060B5D /* PieChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C3C96C1BDACD6F00060B5D /* PieChartViewController.swift */; };
+		27C3C96F1BFAAEFA00060B5D /* PolarityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C3C96E1BFAAEFA00060B5D /* PolarityViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		2727C2DC1BC8463E0084FDBB /* MainAppViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainAppViewController.swift; sourceTree = "<group>"; };
 		2727C2DE1BC8515C0084FDBB /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		27C3C96C1BDACD6F00060B5D /* PieChartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PieChartViewController.swift; sourceTree = "<group>"; };
+		27C3C96E1BFAAEFA00060B5D /* PolarityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PolarityViewController.swift; sourceTree = "<group>"; };
 		3A2061BDFD86A8BE4FBDF30B /* Pods-SocialTemp-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialTemp-ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SocialTemp-ios/Pods-SocialTemp-ios.debug.xcconfig"; sourceTree = "<group>"; };
 		3E2346EBA2F26838B0023B81 /* Pods_SocialTemp_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SocialTemp_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		805D1DEB5EB5F15B49B491AF /* Pods-SocialTemp-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialTemp-ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-SocialTemp-ios/Pods-SocialTemp-ios.release.xcconfig"; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 				2727C2B51BC768A00084FDBB /* Assets.xcassets */,
 				2727C2B71BC768A00084FDBB /* LaunchScreen.storyboard */,
 				2727C2BA1BC768A00084FDBB /* Info.plist */,
+				27C3C96E1BFAAEFA00060B5D /* PolarityViewController.swift */,
 			);
 			path = "SocialTemp-ios";
 			sourceTree = "<group>";
@@ -346,6 +349,7 @@
 				27C3C96D1BDACD6F00060B5D /* PieChartViewController.swift in Sources */,
 				2727C2DF1BC8515C0084FDBB /* NavigationController.swift in Sources */,
 				2727C2DD1BC8463E0084FDBB /* MainAppViewController.swift in Sources */,
+				27C3C96F1BFAAEFA00060B5D /* PolarityViewController.swift in Sources */,
 				2727C2AF1BC768A00084FDBB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -112,6 +112,7 @@ class PieChartViewController: UIViewController {
         emotionPieChartView.legendRenderer.computeLegend(pieChartData)
         emotionPieChartView.legend.neededHeight = 20.0
         
+        
     }
 
     override func didReceiveMemoryWarning() {
