@@ -37,10 +37,9 @@ class MainAppViewController: UIViewController, ChartViewDelegate, UIPickerViewDe
     @IBOutlet weak var otherDayMarker: UIView!
     @IBOutlet weak var polarityGradientView: UIView!
     @IBOutlet weak var arrowImageView: UIImageView!
-    @IBOutlet weak var trendDirectionBackground: UIView!
-    @IBOutlet weak var polarityChangeLabel: UILabel!
     @IBOutlet weak var timePicker: UIPickerView!
     @IBOutlet weak var todayFeelingLabel: UILabel!
+    @IBOutlet weak var polarityChangeLabel: UILabel!
 
 
 
@@ -130,23 +129,23 @@ class MainAppViewController: UIViewController, ChartViewDelegate, UIPickerViewDe
     
     func updateTrendUI() {
         let polarityChangeSinceX = ((self.currentAveragePolarity.rescaled - self.dailyAveragePolarities[pickerDateIndex].rescaled) / 2) * 100
+        var relationPhrase = "more"
+        
         self.polarityChange = polarityChangeSinceX
         
         if self.polarityChange > 0 {
-            self.trendDirectionBackground.backgroundColor = UIColor(red:0.27, green:0.62, blue:0.1, alpha:1)
-            self.arrowImageView.image = UIImage(named: "arrow_up")
+            polarityChangeLabel.textColor = UIColor(red:0, green:0.84, blue:0.4, alpha:1)
         } else if self.polarityChange < 0 {
-            self.trendDirectionBackground.backgroundColor = UIColor(red:0.01, green:0.36, blue:0.69, alpha:1)
-            self.arrowImageView.image = UIImage(named: "arrow_down")
+            relationPhrase = "less"
+            polarityChangeLabel.textColor = UIColor(red:0.01, green:0.81, blue:1, alpha:1)
         } else {
-            self.trendDirectionBackground.backgroundColor = UIColor(red:0.7, green:0.71, blue:0.71, alpha:1)
-            self.arrowImageView.image = UIImage(named: "no_change")
+
         }
         
         otherDayLabel.text = "\(self.pickerTimes[pickerDateIndex])"
 
-        self.polarityChangeLabel.text = String(format: "%.0f", abs(polarityChangeSinceX)) + "%"
-        
+        self.polarityChangeLabel.text = "\(String(format: "%.0f", abs(polarityChangeSinceX)))% \(relationPhrase) positive"
+     
     }
     
     
@@ -190,23 +189,24 @@ class MainAppViewController: UIViewController, ChartViewDelegate, UIPickerViewDe
     }
     
     func setSentimentTier() {
-        if currentAveragePolarity < -0.75 {
+        let scaledPolarity = currentAveragePolarity.rescaled
+        if scaledPolarity < -0.75 {
             // set color to blue, "very negative"
             todayFeelingLabel.textColor = UIColor(red:0.01, green:0.81, blue:1, alpha:1)
             todayFeelingLabel.text = "Northwestern is feeling very negative today."
-        } else if currentAveragePolarity < -0.25 {
+        } else if scaledPolarity < -0.25 {
             // set color to blue, "negative"
             todayFeelingLabel.textColor = UIColor(red:0.01, green:0.81, blue:1, alpha:1)
             todayFeelingLabel.text = "Northwestern is feeling negative today."
-        } else if currentAveragePolarity < 0 {
+        } else if scaledPolarity < 0 {
             // set color to blue, "somewhat negative"
             todayFeelingLabel.textColor = UIColor(red:0.01, green:0.81, blue:1, alpha:1)
             todayFeelingLabel.text = "Northwestern is feeling slightly negative today."
-        } else if currentAveragePolarity < 0.25 {
+        } else if scaledPolarity < 0.25 {
             // set color to green, "somewhat positive"
             todayFeelingLabel.textColor = UIColor(red:0, green:0.84, blue:0.4, alpha:1)
             todayFeelingLabel.text = "Northwestern is feeling slightly positive today."
-        } else if currentAveragePolarity < 0.75 {
+        } else if scaledPolarity < 0.75 {
             // set color to green, "positive"
             todayFeelingLabel.textColor = UIColor(red:0, green:0.84, blue:0.4, alpha:1)
             todayFeelingLabel.text = "Northwestern is feeling positive today."
