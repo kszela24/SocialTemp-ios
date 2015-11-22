@@ -295,18 +295,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7We-X4-G9r" customClass="PieChartView" customModule="Charts">
-                                <rect key="frame" x="44" y="179" width="287" height="247"/>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7We-X4-G9r" customClass="BarChartView" customModule="Charts">
+                                <rect key="frame" x="44" y="72" width="287" height="459"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="247" id="7uU-LH-edQ"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="550" id="zRL-qV-zHb"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="7We-X4-G9r" secondAttribute="trailing" constant="24" id="0ou-tM-Foe"/>
+                            <constraint firstItem="7We-X4-G9r" firstAttribute="top" secondItem="jQm-8K-e92" secondAttribute="bottom" constant="8" id="7zM-t9-UJR"/>
+                            <constraint firstItem="7We-X4-G9r" firstAttribute="centerY" secondItem="egG-RR-T1h" secondAttribute="centerY" id="8sv-om-7ma"/>
+                            <constraint firstAttribute="width" secondItem="7We-X4-G9r" secondAttribute="width" id="9Zi-SM-ew3"/>
+                            <constraint firstItem="7We-X4-G9r" firstAttribute="width" secondItem="egG-RR-T1h" secondAttribute="width" id="BPi-Wa-RJ6"/>
+                            <constraint firstItem="7We-X4-G9r" firstAttribute="width" secondItem="egG-RR-T1h" secondAttribute="width" id="MiZ-Ow-Vhw"/>
+                            <constraint firstItem="7We-X4-G9r" firstAttribute="height" secondItem="egG-RR-T1h" secondAttribute="height" id="PIh-dw-RXV"/>
+                            <constraint firstAttribute="height" secondItem="7We-X4-G9r" secondAttribute="height" id="RAf-Ap-774"/>
+                            <constraint firstAttribute="width" secondItem="7We-X4-G9r" secondAttribute="width" id="Y6C-fQ-iuU"/>
+                            <constraint firstItem="7We-X4-G9r" firstAttribute="leading" secondItem="egG-RR-T1h" secondAttribute="leadingMargin" constant="24" id="y1l-44-hgk"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="xAz-mk-Ogf"/>
                     <connections>
-                        <outlet property="polarityPieChartView" destination="7We-X4-G9r" id="92s-0p-nnT"/>
+                        <outlet property="polarityBarChartView" destination="7We-X4-G9r" id="IDs-d7-dbs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="asN-4t-Vc6" userLabel="First Responder" sceneMemberID="firstResponder"/>
