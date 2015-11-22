@@ -82,6 +82,7 @@ class PieChartViewController: UIViewController {
         topicPieChartView.legendRenderer.computeLegend(pieChartData)
         topicPieChartView.legend.calculatedLabelBreakPoints = [false, false, false, true, false, false]
         topicPieChartView.legend.neededHeight = 20.0
+        topicPieChartView.backgroundColor = UIColor.darkGrayColor()
         
     }
     

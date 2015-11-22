@@ -11,7 +11,7 @@ import Charts
 import Parse
 
 class PolarityViewController: UIViewController {
-    @IBOutlet weak var polarityPieChartView: PieChartView!
+    @IBOutlet weak var polarityBarChartView: BarChartView!
     var topicTally:[Double] = []
     var topics:[String] = []
     
@@ -41,14 +41,10 @@ class PolarityViewController: UIViewController {
             let dataEntry = ChartDataEntry(value: values[i], xIndex: i)
             dataEntries.append(dataEntry)
         }
-        let pieChartDataSet = PieChartDataSet(yVals: dataEntries, label: "")
-        let pieChartData = PieChartData(xVals: dataPoints, dataSet: pieChartDataSet)
-        polarityPieChartView.data = pieChartData
-        polarityPieChartView.centerText = "How is NU Feeling?"
-        polarityPieChartView.centerTextLineBreakMode = NSLineBreakMode.ByWordWrapping
-        polarityPieChartView.descriptionText = "Polarity in NU Posts"
-        polarityPieChartView.usePercentValuesEnabled = true
-        polarityPieChartView.drawSliceTextEnabled = false
+        let barChartDataSet = BarChartDataSet(yVals: dataEntries, label: "")
+        let barChartData = BarChartData(xVals: dataPoints, dataSet: barChartDataSet)
+        polarityBarChartView.data = barChartData
+        polarityBarChartView.descriptionText = "Polarity in NU Posts"
         
         var colors: [UIColor] = []
         
@@ -59,11 +55,11 @@ class PolarityViewController: UIViewController {
             colors.append(UIColor(red: CGFloat(red/255), green: CGFloat(green/255), blue: CGFloat(blue/255), alpha: 1))
         }
         
-        pieChartDataSet.colors = colors
-        
-        polarityPieChartView.legendRenderer.computeLegend(pieChartData)
-        polarityPieChartView.legend.calculatedLabelBreakPoints = [false, false, false, true, false, false]
-        polarityPieChartView.legend.neededHeight = 20.0
+//        barChartDataSet.colors = colors
+//        
+//        polarityBarChartView.legendRenderer.computeLegend(barChartData)
+//        polarityBarChartView.legend.calculatedLabelBreakPoints = [false, false, false, true, false, false]
+//        polarityBarChartView.legend.neededHeight = 20.0
         
     }
 
