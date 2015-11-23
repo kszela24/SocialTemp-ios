@@ -117,11 +117,11 @@
 				2727C2DC1BC8463E0084FDBB /* MainAppViewController.swift */,
 				2727C2DE1BC8515C0084FDBB /* NavigationController.swift */,
 				2727C2B21BC768A00084FDBB /* Main.storyboard */,
+				27C3C96E1BFAAEFA00060B5D /* PolarityViewController.swift */,
 				27C3C96C1BDACD6F00060B5D /* PieChartViewController.swift */,
 				2727C2B51BC768A00084FDBB /* Assets.xcassets */,
 				2727C2B71BC768A00084FDBB /* LaunchScreen.storyboard */,
 				2727C2BA1BC768A00084FDBB /* Info.plist */,
-				27C3C96E1BFAAEFA00060B5D /* PolarityViewController.swift */,
 			);
 			path = "SocialTemp-ios";
 			sourceTree = "<group>";
