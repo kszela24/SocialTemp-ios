@@ -28,6 +28,7 @@ class PolarityViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = UIColor(red:0.24, green:0.24, blue:0.25, alpha:1)
 
         getTopics()
     }
@@ -95,6 +96,7 @@ class PolarityViewController: UIViewController {
         polarityBarChartView.legend.setCustom(colors: [colors[0], colors[1], colors[2], colors[3], colors[4], colors[5]], labels: [dataPoints[0], dataPoints[1], dataPoints[2], dataPoints[3], dataPoints[4], dataPoints[5]])
         polarityBarChartView.legend.calculatedLabelBreakPoints = [true, true, true, true, true, true]
         polarityBarChartView.legend.neededHeight = 100.0
+        polarityBarChartView.legend.textColor = UIColor.whiteColor()
         
     }
 
