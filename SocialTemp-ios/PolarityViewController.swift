@@ -46,33 +46,8 @@ class PolarityViewController: UIViewController {
         let barChartData1 = BarChartData(xVals: dataPoints, dataSet: barChartDataSet1)
         polarityBarChartView.data = barChartData1
         barChartDataSet1.drawValuesEnabled = false
-        //polarityBarChartView.data!.removeXValue(0)
-        
-
-//        let barChartDataSet2 = BarChartDataSet(yVals: [dataEntries[1]], label: dataPoints[1])
-//        let barChartData2 = BarChartData(xVals: [dataPoints[1]], dataSet: barChartDataSet2)
-//        polarityBarChartView.data = barChartData2
-//        barChartDataSet2.drawValuesEnabled = false
-//
-//        let barChartDataSet3 = BarChartDataSet(yVals: [dataEntries[2]], label: dataPoints[2])
-//        let barChartData3 = BarChartData(xVals: [dataPoints[2]], dataSet: barChartDataSet3)
-//        polarityBarChartView.data = barChartData3
-//        barChartDataSet3.drawValuesEnabled = false
-//        
-//        let barChartDataSet4 = BarChartDataSet(yVals: [dataEntries[3]], label: dataPoints[3])
-//        let barChartData4 = BarChartData(xVals: [dataPoints[3]], dataSet: barChartDataSet4)
-//        polarityBarChartView.data = barChartData4
-//        barChartDataSet4.drawValuesEnabled = false
-//
-//        let barChartDataSet5 = BarChartDataSet(yVals: [dataEntries[4]], label: dataPoints[4])
-//        let barChartData5 = BarChartData(xVals: [dataPoints[4]], dataSet: barChartDataSet5)
-//        polarityBarChartView.data = barChartData5
-//        barChartDataSet5.drawValuesEnabled = false
-//        
-//        let barChartDataSet6 = BarChartDataSet(yVals: [dataEntries[5]], label: dataPoints[5])
-//        let barChartData6 = BarChartData(xVals: [dataPoints[5]], dataSet: barChartDataSet6)
-//        polarityBarChartView.data = barChartData6
-//        barChartDataSet6.drawValuesEnabled = false
+        polarityBarChartView.descriptionText.removeAll()
+        polarityBarChartView.xAxis.drawLabelsEnabled = false
         
         
         var colors: [UIColor] = []
@@ -85,13 +60,7 @@ class PolarityViewController: UIViewController {
         }
         
           barChartDataSet1.colors = colors
-//        barChartDataSet2.colors = colors
-//        barChartDataSet3.colors = colors
-//        barChartDataSet4.colors = colors
-//        barChartDataSet5.colors = colors
-//        barChartDataSet6.colors = colors
-//
-//
+
         polarityBarChartView.legendRenderer.computeLegend(barChartData1)
         polarityBarChartView.legend.setCustom(colors: [colors[0], colors[1], colors[2], colors[3], colors[4], colors[5]], labels: [dataPoints[0], dataPoints[1], dataPoints[2], dataPoints[3], dataPoints[4], dataPoints[5]])
         polarityBarChartView.legend.calculatedLabelBreakPoints = [true, true, true, true, true, true]
