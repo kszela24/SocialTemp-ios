@@ -281,11 +281,20 @@
                                             <segue destination="1yp-e3-0zf" kind="push" id="nVg-Pc-ofP"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5,000 tweets today" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fXC-S5-1U4">
+                                        <rect key="frame" x="12" y="12" width="148" height="21"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <animations/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="fXC-S5-1U4" firstAttribute="leading" secondItem="bwY-RI-sNA" secondAttribute="leading" constant="12" id="GaH-50-k7T"/>
                                     <constraint firstAttribute="trailing" secondItem="umg-z4-7hz" secondAttribute="trailing" constant="12" id="H5n-GF-aSr"/>
+                                    <constraint firstItem="fXC-S5-1U4" firstAttribute="top" secondItem="bwY-RI-sNA" secondAttribute="top" constant="12" id="L8i-x6-RaJ"/>
                                     <constraint firstItem="umg-z4-7hz" firstAttribute="top" secondItem="bwY-RI-sNA" secondAttribute="top" constant="8" id="smh-h9-3jB"/>
                                 </constraints>
                             </view>
@@ -340,6 +349,7 @@
                     <navigationItem key="navigationItem" id="RmG-yx-7cK"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="numTweetsTodayLabel" destination="fXC-S5-1U4" id="EyV-Ak-cbK"/>
                         <outlet property="sampleTweetBodyLabel" destination="26y-rc-X7m" id="J9e-mf-HXy"/>
                         <outlet property="sampleTweetTopicLabel" destination="Vn5-lB-wcz" id="4Q2-lf-YiQ"/>
                         <outlet property="topicPieChartView" destination="bwY-RI-sNA" id="hY7-6T-97t"/>
@@ -418,8 +428,21 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="amv-eb-pGm" customClass="PieChartView" customModule="Charts">
                                 <rect key="frame" x="8" y="64" width="359" height="503"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5,000 tweets today" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5nc-sI-BDf">
+                                        <rect key="frame" x="12" y="12" width="148" height="21"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <animations/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="5nc-sI-BDf" firstAttribute="top" secondItem="amv-eb-pGm" secondAttribute="top" constant="12" id="8Ug-ud-AOV"/>
+                                    <constraint firstItem="5nc-sI-BDf" firstAttribute="leading" secondItem="amv-eb-pGm" secondAttribute="leading" constant="12" id="iOs-gz-6uZ"/>
+                                </constraints>
                             </view>
                             <view alpha="0.84999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Scv-eR-6TZ">
                                 <rect key="frame" x="0.0" y="567" width="375" height="100"/>
@@ -474,6 +497,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="emotionPieChartView" destination="amv-eb-pGm" id="oWK-q3-Vpl"/>
+                        <outlet property="numTweetsTodayLabel" destination="5nc-sI-BDf" id="zEH-zw-ggB"/>
                         <outlet property="sampleTweetBodyLabel" destination="Ckq-J1-fLd" id="eWO-Hf-ybW"/>
                         <outlet property="sampleTweetEmotionLabel" destination="yTS-R7-ibO" id="HOU-d3-rBR"/>
                     </connections>

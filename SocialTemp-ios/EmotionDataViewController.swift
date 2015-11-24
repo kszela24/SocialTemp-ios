@@ -13,6 +13,7 @@ import Parse
 class EmotionDataViewController: UIViewController, ChartViewDelegate {
     
     
+    @IBOutlet weak var numTweetsTodayLabel: UILabel!
     @IBOutlet weak var emotionPieChartView: PieChartView!
 
     @IBOutlet weak var sampleTweetEmotionLabel: UILabel!
@@ -49,11 +50,18 @@ class EmotionDataViewController: UIViewController, ChartViewDelegate {
         query.orderByDescending("createdAt")
         query.getFirstObjectInBackgroundWithBlock(){
             (dailyAverage: PFObject?, error: NSError?) -> Void in
-            if let dailyAvg = dailyAverage, emotionSamples = dailyAvg["emotionSamples"] as? [String]
+            if let dailyAvg = dailyAverage,
+                emotionSamples = dailyAvg["emotionSamples"] as? [String],
+                numTweetsToday = dailyAvg["totalTweetsYaks"] as? Int
                 where error == nil {
-                    //                print(dailyAvg)
-                    //                print(dailyAvg["topicSamples"])
                     self.emotionTweetSamples = emotionSamples
+                    
+                    let numberFormatter = NSNumberFormatter()
+                    numberFormatter.numberStyle = .DecimalStyle
+                    
+                    if let formattedNum = numberFormatter.stringFromNumber(numTweetsToday) {
+                        self.numTweetsTodayLabel.text = "\(formattedNum) tweets today"
+                    }
             } else {
                 print(error)
             }
@@ -115,7 +123,9 @@ class EmotionDataViewController: UIViewController, ChartViewDelegate {
         sampleTweetEmotionLabel.text = "Sample tweet displaying \(emotions[entry.xIndex])"
         sampleTweetEmotionLabel.textColor = emotionColors[entry.xIndex]
         
-        sampleTweetBodyLabel.text = "@anonymous: \(emotionTweetSamples[entry.xIndex])"
+        if entry.xIndex < emotionTweetSamples.count {
+            sampleTweetBodyLabel.text = "@anonymous: \(emotionTweetSamples[entry.xIndex])"
+        }
     }
     
     

@@ -13,6 +13,7 @@ import Parse
 class TopicDataViewController: UIViewController, ChartViewDelegate {
 
 
+    @IBOutlet weak var numTweetsTodayLabel: UILabel!
     @IBOutlet weak var sampleTweetTopicLabel: UILabel!
     @IBOutlet weak var sampleTweetBodyLabel: UILabel!
     
@@ -52,9 +53,19 @@ class TopicDataViewController: UIViewController, ChartViewDelegate {
         query.orderByDescending("createdAt")
         query.getFirstObjectInBackgroundWithBlock(){
             (dailyAverage: PFObject?, error: NSError?) -> Void in
-            if let dailyAvg = dailyAverage, topicSamples = dailyAvg["topicSamples"] as? [String]
-                where error == nil {
+            if let dailyAvg = dailyAverage,
+            topicSamples = dailyAvg["topicSamples"] as? [String],
+            numTweetsToday = dailyAvg["totalTweetsYaks"] as? Int
+            where error == nil {
                 self.topicTweetSamples = topicSamples
+                
+                let numberFormatter = NSNumberFormatter()
+                numberFormatter.numberStyle = .DecimalStyle
+                
+                if let formattedNum = numberFormatter.stringFromNumber(numTweetsToday) {
+                    self.numTweetsTodayLabel.text = "\(formattedNum) tweets today"
+                }
+                
             } else {
                 print(error)
             }
@@ -101,7 +112,7 @@ class TopicDataViewController: UIViewController, ChartViewDelegate {
         topicPieChartView.legend.neededHeight = 20.0
         topicPieChartView.backgroundColor = UIColor.darkGrayColor()
         
-        
+        self.topicPieChartView.highlightValue(xIndex: 0, dataSetIndex: 0, callDelegate: true)
     }
     
 
@@ -115,7 +126,10 @@ class TopicDataViewController: UIViewController, ChartViewDelegate {
             sampleTweetTopicLabel.text = "Sample tweet about \(topics[entry.xIndex])"
             sampleTweetTopicLabel.textColor = topicColors[entry.xIndex]
             
-            sampleTweetBodyLabel.text = "@anonymous: \(topicTweetSamples[entry.xIndex])"
+            if entry.xIndex < topicTweetSamples.count {
+                sampleTweetBodyLabel.text = "@anonymous: \(topicTweetSamples[entry.xIndex])"
+            }
+            
         }
     }
     
