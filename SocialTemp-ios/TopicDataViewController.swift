@@ -87,7 +87,7 @@ class TopicDataViewController: UIViewController, ChartViewDelegate {
         topicPieChartView.data = pieChartData
         topicPieChartView.centerText = "What is NU Talking About?"
         topicPieChartView.centerTextLineBreakMode = NSLineBreakMode.ByWordWrapping
-        topicPieChartView.descriptionText = "Topics of NU Posts"
+        topicPieChartView.descriptionText = "Topics of NU Posts By Percent"
         topicPieChartView.usePercentValuesEnabled = true
         topicPieChartView.drawSliceTextEnabled = false
         topicPieChartView.descriptionTextColor = UIColor.whiteColor()
@@ -115,6 +115,49 @@ class TopicDataViewController: UIViewController, ChartViewDelegate {
         self.topicPieChartView.highlightValue(xIndex: 0, dataSetIndex: 0, callDelegate: true)
     }
     
+<<<<<<< Updated upstream:SocialTemp-ios/TopicDataViewController.swift
+=======
+    func setEmotionChart(dataPoints: [String], values: [Double]) {
+        
+        var dataEntries: [ChartDataEntry] = []
+        
+        for i in 0..<dataPoints.count {
+            let dataEntry = ChartDataEntry(value: values[i], xIndex: i)
+            dataEntries.append(dataEntry)
+        }
+        let pieChartDataSet = PieChartDataSet(yVals: dataEntries, label: "")
+        let pieChartData = PieChartData(xVals: dataPoints, dataSet: pieChartDataSet)
+        emotionPieChartView.data = pieChartData
+        emotionPieChartView.centerText = "How is NU feeling?"
+        emotionPieChartView.centerTextLineBreakMode = NSLineBreakMode.ByWordWrapping
+        emotionPieChartView.descriptionText = "Emotions of NU Posts By Percent"
+        emotionPieChartView.usePercentValuesEnabled = true
+        emotionPieChartView.drawSliceTextEnabled = false
+        emotionPieChartView.descriptionTextColor = UIColor.whiteColor()
+        emotionPieChartView.legend.textColor = UIColor.whiteColor()
+        emotionPieChartView.backgroundColor = UIColor.darkGrayColor()
+        
+        var colors: [UIColor] = []
+        
+        for _ in 0..<dataPoints.count {
+            let red = Double(arc4random_uniform(256))
+            let green = Double(arc4random_uniform(256))
+            let blue = Double(arc4random_uniform(256))
+            colors.append(UIColor(red: CGFloat(red/255), green: CGFloat(green/255), blue: CGFloat(blue/255), alpha: 1))
+        }
+        
+        pieChartDataSet.colors = colors
+        
+        emotionPieChartView.legend.textColor = UIColor.whiteColor()
+        
+        emotionPieChartView.legendRenderer.computeLegend(pieChartData)
+        emotionPieChartView.legend.calculatedLabelBreakPoints = [false, false, false, false, true, false, false]
+        
+
+        emotionPieChartView.legend.neededHeight = 20.0
+        
+    }
+>>>>>>> Stashed changes:SocialTemp-ios/PieChartViewController.swift
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

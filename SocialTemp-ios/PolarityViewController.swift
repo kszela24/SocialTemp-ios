@@ -48,6 +48,10 @@ class PolarityViewController: UIViewController {
         barChartDataSet1.drawValuesEnabled = false
         polarityBarChartView.descriptionText.removeAll()
         polarityBarChartView.xAxis.drawLabelsEnabled = false
+        polarityBarChartView.leftAxis.labelTextColor = UIColor.whiteColor()
+        polarityBarChartView.rightAxis.drawLabelsEnabled = false
+        //polarityBarChartView.lowestVisibleXIndex = -1
+        polarityBarChartView.animate(xAxisDuration: 2.0, yAxisDuration: 2.0)
         
         
         var colors: [UIColor] = []
@@ -62,7 +66,7 @@ class PolarityViewController: UIViewController {
           barChartDataSet1.colors = colors
 
         polarityBarChartView.legendRenderer.computeLegend(barChartData1)
-        polarityBarChartView.legend.setCustom(colors: [colors[0], colors[1], colors[2], colors[3], colors[4], colors[5]], labels: [dataPoints[0], dataPoints[1], dataPoints[2], dataPoints[3], dataPoints[4], dataPoints[5]])
+        polarityBarChartView.legend.setCustom(colors: Array(colors[0..<6]), labels: Array(dataPoints[0..<6]))
         polarityBarChartView.legend.calculatedLabelBreakPoints = [true, true, true, true, true, true]
         polarityBarChartView.legend.neededHeight = 100.0
         polarityBarChartView.legend.textColor = UIColor.whiteColor()
