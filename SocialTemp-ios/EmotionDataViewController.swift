@@ -91,17 +91,17 @@ class EmotionDataViewController: UIViewController, ChartViewDelegate {
         emotionPieChartView.legend.textColor = UIColor.whiteColor()
         emotionPieChartView.backgroundColor = UIColor.darkGrayColor()
 
-        var colors: [UIColor] = []
+//        var colors: [UIColor] = []
+//
+//        for _ in 0..<dataPoints.count {
+//            let red = Double(arc4random_uniform(256))
+//            let green = Double(arc4random_uniform(256))
+//            let blue = Double(arc4random_uniform(256))
+//            colors.append(UIColor(red: CGFloat(red/255), green: CGFloat(green/255), blue: CGFloat(blue/255), alpha: 1))
+//        }
 
-        for _ in 0..<dataPoints.count {
-            let red = Double(arc4random_uniform(256))
-            let green = Double(arc4random_uniform(256))
-            let blue = Double(arc4random_uniform(256))
-            colors.append(UIColor(red: CGFloat(red/255), green: CGFloat(green/255), blue: CGFloat(blue/255), alpha: 1))
-        }
-
-        pieChartDataSet.colors = colors
-        emotionColors = colors
+        pieChartDataSet.colors = [UIColor.redColor(), UIColor.cyanColor(), UIColor.blueColor(), UIColor.greenColor(), UIColor.yellowColor(), UIColor.orangeColor(), UIColor.purpleColor(), UIColor.magentaColor()]
+        emotionColors = pieChartDataSet.colors
 
         emotionPieChartView.legend.textColor = UIColor.whiteColor()
 
