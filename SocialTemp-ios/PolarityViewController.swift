@@ -49,18 +49,16 @@ class PolarityViewController: UIViewController {
         polarityBarChartView.descriptionText.removeAll()
         polarityBarChartView.xAxis.drawLabelsEnabled = false
         
+        barChartDataSet1.colors = [UIColor(red: CGFloat(Double(220)/255), green: CGFloat(Double(20)/255), blue: CGFloat(Double(60)/255), alpha: 1),
+            UIColor(red: CGFloat(Double(25)/255), green: CGFloat(Double(25)/255), blue: CGFloat(Double(112)/255), alpha: 1),
+            UIColor.blueColor(),
+            UIColor(red: CGFloat(Double(0)/255), green: CGFloat(Double(128)/255), blue: CGFloat(Double(0)/255), alpha: 1),
+            UIColor.yellowColor(),
+            UIColor(red: CGFloat(Double(139)/255), green: CGFloat(Double(0)/255), blue: CGFloat(Double(0)/255), alpha: 1),
+            UIColor.purpleColor(),
+            UIColor(red: CGFloat(Double(138)/255), green: CGFloat(Double(43)/255), blue: CGFloat(Double(226)/255), alpha: 1)]
         
-        var colors: [UIColor] = []
-        
-        for _ in 0..<dataPoints.count {
-            let red = Double(arc4random_uniform(256))
-            let green = Double(arc4random_uniform(256))
-            let blue = Double(arc4random_uniform(256))
-            colors.append(UIColor(red: CGFloat(red/255), green: CGFloat(green/255), blue: CGFloat(blue/255), alpha: 1))
-        }
-        
-          barChartDataSet1.colors = colors
-
+        let colors = barChartDataSet1.colors
         polarityBarChartView.legendRenderer.computeLegend(barChartData1)
         polarityBarChartView.legend.setCustom(colors: [colors[0], colors[1], colors[2], colors[3], colors[4], colors[5]], labels: [dataPoints[0], dataPoints[1], dataPoints[2], dataPoints[3], dataPoints[4], dataPoints[5]])
         polarityBarChartView.legend.calculatedLabelBreakPoints = [true, true, true, true, true, true]
