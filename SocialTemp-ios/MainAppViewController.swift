@@ -30,7 +30,7 @@ extension Float {
     }
 }
 
-class MainAppViewController: UIViewController, ChartViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
+class MainAppViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     @IBOutlet weak var otherDayLabel: UILabel!
     @IBOutlet weak var todayMarker: UIView!

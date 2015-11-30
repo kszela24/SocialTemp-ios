@@ -20,6 +20,7 @@
 		27C3C96D1BDACD6F00060B5D /* TopicDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C3C96C1BDACD6F00060B5D /* TopicDataViewController.swift */; };
 		27C3C96F1BFAAEFA00060B5D /* PolarityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C3C96E1BFAAEFA00060B5D /* PolarityViewController.swift */; };
 		BA6DE4A51C041FB100CC2165 /* EmotionDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6DE4A41C041FB100CC2165 /* EmotionDataViewController.swift */; };
+		BACBD5CC1C0BF885002389D3 /* SentimentByTopicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACBD5CB1C0BF885002389D3 /* SentimentByTopicViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		3E2346EBA2F26838B0023B81 /* Pods_SocialTemp_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SocialTemp_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		805D1DEB5EB5F15B49B491AF /* Pods-SocialTemp-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialTemp-ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-SocialTemp-ios/Pods-SocialTemp-ios.release.xcconfig"; sourceTree = "<group>"; };
 		BA6DE4A41C041FB100CC2165 /* EmotionDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmotionDataViewController.swift; sourceTree = "<group>"; };
+		BACBD5CB1C0BF885002389D3 /* SentimentByTopicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SentimentByTopicViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 				2727C2DC1BC8463E0084FDBB /* MainAppViewController.swift */,
 				2727C2DE1BC8515C0084FDBB /* NavigationController.swift */,
 				2727C2B21BC768A00084FDBB /* Main.storyboard */,
+				BACBD5CB1C0BF885002389D3 /* SentimentByTopicViewController.swift */,
 				27C3C96E1BFAAEFA00060B5D /* PolarityViewController.swift */,
 				27C3C96C1BDACD6F00060B5D /* TopicDataViewController.swift */,
 				BA6DE4A41C041FB100CC2165 /* EmotionDataViewController.swift */,
@@ -352,6 +355,7 @@
 				27C3C96D1BDACD6F00060B5D /* TopicDataViewController.swift in Sources */,
 				BA6DE4A51C041FB100CC2165 /* EmotionDataViewController.swift in Sources */,
 				2727C2DF1BC8515C0084FDBB /* NavigationController.swift in Sources */,
+				BACBD5CC1C0BF885002389D3 /* SentimentByTopicViewController.swift in Sources */,
 				2727C2DD1BC8463E0084FDBB /* MainAppViewController.swift in Sources */,
 				27C3C96F1BFAAEFA00060B5D /* PolarityViewController.swift in Sources */,
 				2727C2AF1BC768A00084FDBB /* AppDelegate.swift in Sources */,
