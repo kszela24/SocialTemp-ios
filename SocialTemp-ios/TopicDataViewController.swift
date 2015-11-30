@@ -137,6 +137,10 @@ class TopicDataViewController: UIViewController, ChartViewDelegate {
                 sampleTweetBodyLabel.text = "@anonymous: \(topicTweetSamples[entry.xIndex])"
             }
             
+        } else if entry.xIndex == topics.count - 1 {
+            sampleTweetTopicLabel.text = "No tweets about Other"
+            sampleTweetTopicLabel.textColor = topicColors[entry.xIndex]
+            sampleTweetBodyLabel.text = ""
         }
     }
     

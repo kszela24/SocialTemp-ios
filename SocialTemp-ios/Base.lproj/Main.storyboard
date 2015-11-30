@@ -27,8 +27,8 @@
                                         <color key="textColor" red="0.2273501574" green="0.75011444930000004" blue="0.2755669147" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="than they were" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oqf-pu-wtb">
-                                        <rect key="frame" x="108" y="42" width="114" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="than they were" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oqf-pu-wtb">
+                                        <rect key="frame" x="109" y="42" width="113" height="21"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -169,7 +169,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1m7-Oe-j4s">
-                                <rect key="frame" x="65" y="537" width="190" height="31"/>
+                                <rect key="frame" x="65" y="533" width="190" height="31"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1fH-rL-1uz" colorLabel="IBBuiltInLabel-Purple">
                                         <rect key="frame" x="33" y="0.0" width="45" height="30"/>
@@ -200,7 +200,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jJe-Jd-tcR">
-                                <rect key="frame" x="153" y="537" width="14" height="31"/>
+                                <rect key="frame" x="153" y="533" width="14" height="31"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="14" id="wus-pC-w2F"/>
@@ -222,7 +222,7 @@
                             <constraint firstItem="5ZF-1w-t5m" firstAttribute="centerY" secondItem="8lK-aH-A9I" secondAttribute="centerY" id="Rbp-4Q-wlI"/>
                             <constraint firstItem="jJe-Jd-tcR" firstAttribute="centerX" secondItem="1m7-Oe-j4s" secondAttribute="centerX" id="TcK-hn-PBq"/>
                             <constraint firstItem="P1u-Ay-Vov" firstAttribute="top" secondItem="kZA-NR-3lx" secondAttribute="bottom" constant="-2.5" id="Ull-aZ-sbo"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="1m7-Oe-j4s" secondAttribute="bottom" id="ZQ3-ml-c5P"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="1m7-Oe-j4s" secondAttribute="bottom" constant="4" id="ZQ3-ml-c5P"/>
                             <constraint firstItem="jJe-Jd-tcR" firstAttribute="top" secondItem="1m7-Oe-j4s" secondAttribute="top" id="dQY-2m-wuS"/>
                             <constraint firstItem="RB2-g6-off" firstAttribute="centerY" secondItem="8lK-aH-A9I" secondAttribute="centerY" placeholder="YES" id="fxN-b4-k5K"/>
                             <constraint firstItem="8lK-aH-A9I" firstAttribute="leading" secondItem="RB2-g6-off" secondAttribute="trailing" constant="-15" id="hUT-dr-20E"/>
@@ -301,7 +301,7 @@
                             <view alpha="0.84999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5VQ-hx-wzo">
                                 <rect key="frame" x="0.0" y="567" width="375" height="100"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@anonymous: the Oscars!!! #celebs" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="26y-rc-X7m">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@anonymous: the Oscars!!! #celebs" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="26y-rc-X7m">
                                         <rect key="frame" x="12" y="22" width="351" height="16"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
@@ -447,7 +447,7 @@
                             <view alpha="0.84999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Scv-eR-6TZ">
                                 <rect key="frame" x="0.0" y="567" width="375" height="100"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@anonymous: I am so happy right now" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ckq-J1-fLd">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@anonymous: I am so happy right now" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ckq-J1-fLd">
                                         <rect key="frame" x="12" y="22" width="351" height="16"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>

@@ -123,7 +123,7 @@ class EmotionDataViewController: UIViewController, ChartViewDelegate {
         sampleTweetEmotionLabel.text = "Sample tweet displaying \(emotions[entry.xIndex])"
         sampleTweetEmotionLabel.textColor = emotionColors[entry.xIndex]
         
-        if entry.xIndex < emotionTweetSamples.count {
+        if entry.xIndex < emotions.count {
             sampleTweetBodyLabel.text = "@anonymous: \(emotionTweetSamples[entry.xIndex])"
         }
     }
