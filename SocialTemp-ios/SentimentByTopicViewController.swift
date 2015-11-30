@@ -89,7 +89,7 @@ class SentimentByTopicViewController: UIViewController, UIPickerViewDelegate, UI
             self.secondTopicPicker.dataSource = self
             
             self.secondTopicPicker.selectRow(1, inComponent: 0, animated: false)
-
+            self.placeGradientMarkers()
             self.updateUI()
         }
     }
@@ -136,7 +136,8 @@ class SentimentByTopicViewController: UIViewController, UIPickerViewDelegate, UI
         
         sentimentDifferenceLabel.text = "\(String(format: "%.0f", abs(topicSentimentDifference)))% \(relationPhrase) positive"
         
-        placeGradientMarkers()
+        updateFirstTopicMarker()
+        updateSecondTopicMarker()
     }
     
     
