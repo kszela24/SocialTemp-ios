@@ -33,8 +33,16 @@ class SentimentByTopicViewController: UIViewController, UIPickerViewDelegate, UI
     @IBOutlet weak var firstMarkerLabel: UILabel!
     @IBOutlet weak var secondMarkerLabel: UILabel!
     
-    var averageTopicSentiments = [Float]()
-    var topics = [String]()
+    let topics = ["Entertainment", "Automotive", "Business",
+        "Careers", "Education", "Family", "Finance", "Food",
+        "Health", "Hobbies and Interests", "Home and Garden", "Law, Govt and Politics",
+        "News", "Pets", "Real Estate", "Religion and Spirituality", "Science",
+        "Shopping", "Society", "Sports", "Fashion", "Technology",
+        "Travel"]
+    
+    
+    var averageTopTopicSentiments = [Float]()
+    var topTopicsIndices = [Int]()
     var firstSelectedTopic:Int = 0
     var secondSelectedTopic:Int = 1
     
@@ -45,6 +53,8 @@ class SentimentByTopicViewController: UIViewController, UIPickerViewDelegate, UI
     
     var firstTopicYConstraint: NSLayoutConstraint?
     var secondTopicYConstraint: NSLayoutConstraint?
+    
+    var topTopics = [String]()
     
     
     func scaleWithBounds(value: Float, minimum: Float, maximum: Float) -> Float {
@@ -68,20 +78,31 @@ class SentimentByTopicViewController: UIViewController, UIPickerViewDelegate, UI
             (response: AnyObject?, error: NSError?) -> Void in
             let objects = response as! NSArray
             
-            self.topics = objects[1] as! [String]
-            self.topics.removeLast()
-            
             let unscaledSentiments = objects[2] as! [Float]
-            let minElt = unscaledSentiments.minElement()!
-            let maxElt = unscaledSentiments.maxElement()!
-            self.averageTopicSentiments = unscaledSentiments.map({ (f) -> Float in
+            self.topTopicsIndices = objects[3] as! [Int]
+
+            var topTopicUnscaledSentiments = [Float]()
+            
+            for idx in self.topTopicsIndices[0..<6] {
+                self.topTopics.append(self.topics[idx])
+                topTopicUnscaledSentiments.append(unscaledSentiments[idx])
+            }
+            
+            
+            let minElt = topTopicUnscaledSentiments.minElement()!
+            let maxElt = topTopicUnscaledSentiments.maxElement()!
+            self.averageTopTopicSentiments = topTopicUnscaledSentiments.map({ (f) -> Float in
                 return self.scaleWithBounds(f, minimum: minElt, maximum: maxElt)
             })
-            print(self.topics)
-            print(self.averageTopicSentiments)
+            print(topTopicUnscaledSentiments)
+            print(self.topTopicsIndices)
+            print(self.averageTopTopicSentiments)
             
-            self.minTopicPolarity = self.averageTopicSentiments.minElement()!
-            self.maxTopicPolarity = self.averageTopicSentiments.maxElement()!
+            print("\n")
+            print(self.topTopics)
+            
+            self.minTopicPolarity = self.averageTopTopicSentiments.minElement()!
+            self.maxTopicPolarity = self.averageTopTopicSentiments.maxElement()!
             
             self.firstTopicPicker.delegate = self
             self.firstTopicPicker.dataSource = self
@@ -123,7 +144,7 @@ class SentimentByTopicViewController: UIViewController, UIPickerViewDelegate, UI
         firstMarkerLabel.text = topics[firstSelectedTopic]
         secondMarkerLabel.text = topics[secondSelectedTopic]
         
-        topicSentimentDifference = (averageTopicSentiments[firstSelectedTopic] - averageTopicSentiments[secondSelectedTopic]) * 50
+        topicSentimentDifference = (averageTopTopicSentiments[firstSelectedTopic] - averageTopTopicSentiments[secondSelectedTopic]) * 50
         
         var relationPhrase = "more"
         
@@ -150,7 +171,7 @@ class SentimentByTopicViewController: UIViewController, UIPickerViewDelegate, UI
             toItem: firstTopicMarker,
             attribute: NSLayoutAttribute.CenterY,
             multiplier: 1,
-            constant: gradientHeight/2 + CGFloat(averageTopicSentiments[firstSelectedTopic]) * gradientHeight/2)
+            constant: gradientHeight/2 + CGFloat(averageTopTopicSentiments[firstSelectedTopic]) * gradientHeight/2)
         view.addConstraint(firstTopicYConstraint!)
         
         firstTopicMarker.layer.zPosition = 1
@@ -162,7 +183,7 @@ class SentimentByTopicViewController: UIViewController, UIPickerViewDelegate, UI
             toItem: secondTopicMarker,
             attribute: NSLayoutAttribute.CenterY,
             multiplier: 1,
-            constant: gradientHeight/2 + CGFloat(averageTopicSentiments[secondSelectedTopic]) * gradientHeight/2)
+            constant: gradientHeight/2 + CGFloat(averageTopTopicSentiments[secondSelectedTopic]) * gradientHeight/2)
         view.addConstraint(secondTopicYConstraint!)
         
         UILabel.animateWithDuration(1, animations: {
@@ -175,7 +196,7 @@ class SentimentByTopicViewController: UIViewController, UIPickerViewDelegate, UI
         let gradientHeight = polarityGradientView.frame.height
         self.view.layoutIfNeeded()
         UIView.animateWithDuration(1, animations: {
-            self.firstTopicYConstraint!.constant = gradientHeight/2 + CGFloat(self.averageTopicSentiments[self.firstSelectedTopic]) * gradientHeight/2
+            self.firstTopicYConstraint!.constant = gradientHeight/2 + CGFloat(self.averageTopTopicSentiments[self.firstSelectedTopic]) * gradientHeight/2
             self.view.layoutIfNeeded()
         })
     }
@@ -184,7 +205,7 @@ class SentimentByTopicViewController: UIViewController, UIPickerViewDelegate, UI
         let gradientHeight = polarityGradientView.frame.height
         self.view.layoutIfNeeded()
         UIView.animateWithDuration(1, animations: {
-            self.secondTopicYConstraint!.constant = gradientHeight/2 + CGFloat(self.averageTopicSentiments[self.secondSelectedTopic]) * gradientHeight/2
+            self.secondTopicYConstraint!.constant = gradientHeight/2 + CGFloat(self.averageTopTopicSentiments[self.secondSelectedTopic]) * gradientHeight/2
             self.view.layoutIfNeeded()
         })
     }
@@ -196,7 +217,7 @@ class SentimentByTopicViewController: UIViewController, UIPickerViewDelegate, UI
     }
     
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return topics.count
+        return 6
     }
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
@@ -213,8 +234,11 @@ class SentimentByTopicViewController: UIViewController, UIPickerViewDelegate, UI
     
     
     func pickerView(pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
-        let attributedString = NSAttributedString(string: topics[row], attributes: [NSForegroundColorAttributeName : UIColor.whiteColor()])
-        return attributedString
+        if row < topTopics.count {
+            let attributedString = NSAttributedString(string: topTopics[row], attributes: [NSForegroundColorAttributeName : UIColor.whiteColor()])
+            return attributedString
+        }
+        return nil
     }
     
 }

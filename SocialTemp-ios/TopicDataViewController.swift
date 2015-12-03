@@ -19,22 +19,45 @@ class TopicDataViewController: UIViewController, ChartViewDelegate {
     
     @IBOutlet weak var topicPieChartView: PieChartView!
 
-    var topicTally:[Double] = []
-    var topics:[String] = []
+//    var topicTally:[Double] = []
+//    var topics:[String] = []
     var topicTweetSamples = [String]()
     
-
+    var topicFrequencies = [Double]()
+    var topTopicsIndices = [Int]()
+    var otherCount:Double = 0
     var topicColors = [UIColor]()
     
+    
+    let topics = ["Entertainment", "Automotive", "Business",
+        "Careers", "Education", "Family", "Finance", "Food",
+        "Health", "Hobbies and Interests", "Home and Garden", "Law, Govt and Politics",
+        "News", "Pets", "Real Estate", "Religion and Spirituality", "Science",
+        "Shopping", "Society", "Sports", "Fashion", "Technology",
+        "Travel"]
+
     
     private func getTopics() {
         PFCloud.callFunctionInBackground("returnTopics", withParameters: nil) {
             (response: AnyObject?, error: NSError?) -> Void in
             let objects = response as! NSArray
-            self.topicTally = objects[0] as! [Double]
-            self.topics = objects[1] as! [String]
-            self.setTopicChart(self.topics, values: self.topicTally)
-            self.topicPieChartView.highlightValue(xIndex: 0, dataSetIndex: 0, callDelegate: true)
+//            self.topicTally = objects[0] as! [Double]
+//            self.topics = objects[1] as! [String]
+            self.topTopicsIndices = objects[3] as! [Int]
+            self.otherCount = objects[4] as! Double
+            self.topicFrequencies = objects[5] as! [Double]
+            
+            
+            var topTopics = [String]()
+            var topFrequencies = [Double]()
+            for idx in self.topTopicsIndices[0..<6] {
+                topTopics.append(self.topics[idx])
+                topFrequencies.append(self.topicFrequencies[idx])
+            }
+            topTopics.append("Other")
+            topFrequencies.append(self.otherCount)
+            
+            self.setTopicChart(topTopics, values: topFrequencies)
         }
     }
 
@@ -65,13 +88,14 @@ class TopicDataViewController: UIViewController, ChartViewDelegate {
                 if let formattedNum = numberFormatter.stringFromNumber(numTweetsToday) {
                     self.numTweetsTodayLabel.text = "\(formattedNum) tweets today"
                 }
+                self.getTopics()
                 
             } else {
                 print(error)
             }
         }
 
-        getTopics()
+        
     }
     
     func setTopicChart(dataPoints: [String], values: [Double]) {
@@ -129,15 +153,15 @@ class TopicDataViewController: UIViewController, ChartViewDelegate {
     
 
     func chartValueSelected(chartView: ChartViewBase, entry: ChartDataEntry, dataSetIndex: Int, highlight: ChartHighlight) {
-        if entry.xIndex < topics.count - 1 {
-            sampleTweetTopicLabel.text = "Sample tweet about \(topics[entry.xIndex])"
+        if entry.xIndex < 6 {
+            sampleTweetTopicLabel.text = "Sample tweet about \(topics[topTopicsIndices[entry.xIndex]])"
             sampleTweetTopicLabel.textColor = topicColors[entry.xIndex]
             
             if entry.xIndex < topicTweetSamples.count {
-                sampleTweetBodyLabel.text = "@anonymous: \(topicTweetSamples[entry.xIndex])"
+                sampleTweetBodyLabel.text = "@anonymous: \(topicTweetSamples[topTopicsIndices[entry.xIndex]])"
             }
             
-        } else if entry.xIndex == topics.count - 1 {
+        } else if entry.xIndex == 6 {
             sampleTweetTopicLabel.text = "No tweets about Other"
             sampleTweetTopicLabel.textColor = topicColors[entry.xIndex]
             sampleTweetBodyLabel.text = ""
