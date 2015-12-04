@@ -1,12 +1,3 @@
-//
-//  SentimentByTopicViewController.swift
-//  SocialTemp-ios
-//
-//  Created by Henry Spindell on 11/29/15.
-//  Copyright © 2015 Kyle. All rights reserved.
-//
-
-import Foundation
 
 //
 //  SentimentByTopicViewController.swift
@@ -16,6 +7,7 @@ import Foundation
 //  Copyright © 2015 Henry. All rights reserved.
 //
 
+import Foundation
 import UIKit
 import Parse
 
@@ -94,12 +86,6 @@ class SentimentByTopicViewController: UIViewController, UIPickerViewDelegate, UI
             self.averageTopTopicSentiments = topTopicUnscaledSentiments.map({ (f) -> Float in
                 return self.scaleWithBounds(f, minimum: minElt, maximum: maxElt)
             })
-            print(topTopicUnscaledSentiments)
-            print(self.topTopicsIndices)
-            print(self.averageTopTopicSentiments)
-            
-            print("\n")
-            print(self.topTopics)
             
             self.minTopicPolarity = self.averageTopTopicSentiments.minElement()!
             self.maxTopicPolarity = self.averageTopTopicSentiments.maxElement()!
@@ -138,11 +124,11 @@ class SentimentByTopicViewController: UIViewController, UIPickerViewDelegate, UI
     
     
     func updateUI() {
-        firstTopicLabel.text = "Tweets about \(topics[firstSelectedTopic]) today are"
-        secondTopicLabel.text = "than they are about \(topics[secondSelectedTopic])"
+        firstTopicLabel.text = "Tweets about \(topTopics[firstSelectedTopic]) today are"
+        secondTopicLabel.text = "than they are about \(topTopics[secondSelectedTopic])"
         
-        firstMarkerLabel.text = topics[firstSelectedTopic]
-        secondMarkerLabel.text = topics[secondSelectedTopic]
+        firstMarkerLabel.text = topTopics[firstSelectedTopic]
+        secondMarkerLabel.text = topTopics[secondSelectedTopic]
         
         topicSentimentDifference = (averageTopTopicSentiments[firstSelectedTopic] - averageTopTopicSentiments[secondSelectedTopic]) * 50
         

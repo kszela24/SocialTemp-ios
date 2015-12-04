@@ -32,7 +32,6 @@ class EmotionDataViewController: UIViewController, ChartViewDelegate {
             self.emotionTally = objects[0] as! [Double]
             self.emotions = objects[1] as! [String]
             self.setEmotionChart(self.emotions, values: self.emotionTally)
-            self.emotionPieChartView.highlightValue(xIndex: 0, dataSetIndex: 0, callDelegate: true)
         }
     }
 
@@ -62,12 +61,13 @@ class EmotionDataViewController: UIViewController, ChartViewDelegate {
                     if let formattedNum = numberFormatter.stringFromNumber(numTweetsToday) {
                         self.numTweetsTodayLabel.text = "\(formattedNum) tweets today"
                     }
+                    self.getEmotions()
             } else {
                 print(error)
             }
         }
 
-        getEmotions()
+        
     }
 
     
@@ -96,7 +96,7 @@ class EmotionDataViewController: UIViewController, ChartViewDelegate {
             UIColor(red: CGFloat(Double(25)/255), green: CGFloat(Double(25)/255), blue: CGFloat(Double(112)/255), alpha: 1),
             UIColor.blueColor(),
             UIColor(red: CGFloat(Double(0)/255), green: CGFloat(Double(128)/255), blue: CGFloat(Double(0)/255), alpha: 1),
-            UIColor.yellowColor(),
+            UIColor(red:0.91, green:0.85, blue:0.25, alpha:1),
             UIColor(red: CGFloat(Double(139)/255), green: CGFloat(Double(0)/255), blue: CGFloat(Double(0)/255), alpha: 1),
             UIColor.purpleColor(),
             UIColor(red: CGFloat(Double(138)/255), green: CGFloat(Double(43)/255), blue: CGFloat(Double(226)/255), alpha: 1)]
@@ -108,9 +108,8 @@ class EmotionDataViewController: UIViewController, ChartViewDelegate {
         emotionPieChartView.legendRenderer.computeLegend(pieChartData)
         emotionPieChartView.legend.calculatedLabelBreakPoints = [false, false, false, false, true, false, false]
 
-
         emotionPieChartView.legend.neededHeight = 20.0
-
+        emotionPieChartView.highlightValue(xIndex: 0, dataSetIndex: 0, callDelegate: true)
     }
     
     override func didReceiveMemoryWarning() {

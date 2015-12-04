@@ -1,0 +1,932 @@
+BCSymbolMap Version: 1.0
+-[BFCancellationToken init]
+-[BFCancellationToken isCancellationRequested]
+-[BFCancellationToken cancel]
+-[BFCancellationToken notifyCancellation:]
+-[BFCancellationToken registerCancellationObserverWithBlock:]
+-[BFCancellationToken unregisterRegistration:]
+-[BFCancellationToken cancelPrivate]
+-[BFCancellationToken cancelAfterDelay:]
+-[BFCancellationToken dispose]
+-[BFCancellationToken throwIfDisposed]
+-[BFCancellationToken setCancellationRequested:]
+-[BFCancellationToken registrations]
+-[BFCancellationToken setRegistrations:]
+-[BFCancellationToken lock]
+-[BFCancellationToken setLock:]
+-[BFCancellationToken disposed]
+-[BFCancellationToken setDisposed:]
+-[BFCancellationToken .cxx_destruct]
+OBJC_CLASSLIST_SUP_REFS_$_
+OBJC_METH_VAR_NAME_
+OBJC_SELECTOR_REFERENCES_
+OBJC_CLASSLIST_REFERENCES_$_
+OBJC_METH_VAR_NAME_1
+OBJC_SELECTOR_REFERENCES_2
+OBJC_IVAR_$_BFCancellationToken._registrations
+OBJC_CLASSLIST_REFERENCES_$_3
+OBJC_METH_VAR_NAME_4
+OBJC_SELECTOR_REFERENCES_5
+OBJC_IVAR_$_BFCancellationToken._lock
+OBJC_METH_VAR_NAME_6
+OBJC_SELECTOR_REFERENCES_7
+OBJC_METH_VAR_NAME_8
+OBJC_SELECTOR_REFERENCES_9
+OBJC_IVAR_$_BFCancellationToken._cancellationRequested
+OBJC_METH_VAR_NAME_10
+OBJC_SELECTOR_REFERENCES_11
+OBJC_METH_VAR_NAME_12
+OBJC_SELECTOR_REFERENCES_13
+OBJC_METH_VAR_NAME_14
+OBJC_SELECTOR_REFERENCES_15
+OBJC_METH_VAR_NAME_16
+OBJC_SELECTOR_REFERENCES_17
+OBJC_METH_VAR_NAME_18
+OBJC_SELECTOR_REFERENCES_19
+OBJC_METH_VAR_NAME_20
+OBJC_SELECTOR_REFERENCES_21
+OBJC_METH_VAR_NAME_22
+OBJC_SELECTOR_REFERENCES_23
+OBJC_CLASSLIST_REFERENCES_$_24
+OBJC_METH_VAR_NAME_25
+OBJC_SELECTOR_REFERENCES_26
+OBJC_METH_VAR_NAME_27
+OBJC_SELECTOR_REFERENCES_28
+OBJC_METH_VAR_NAME_29
+OBJC_SELECTOR_REFERENCES_30
+OBJC_METH_VAR_NAME_31
+OBJC_SELECTOR_REFERENCES_32
+OBJC_CLASSLIST_REFERENCES_$_33
+.str
+_unnamed_cfstring_
+OBJC_METH_VAR_NAME_34
+OBJC_SELECTOR_REFERENCES_35
+OBJC_METH_VAR_NAME_36
+OBJC_SELECTOR_REFERENCES_37
+OBJC_METH_VAR_NAME_38
+OBJC_SELECTOR_REFERENCES_39
+OBJC_METH_VAR_NAME_40
+OBJC_SELECTOR_REFERENCES_41
+OBJC_METH_VAR_NAME_42
+OBJC_SELECTOR_REFERENCES_43
+OBJC_METH_VAR_NAME_44
+OBJC_SELECTOR_REFERENCES_45
+OBJC_METH_VAR_NAME_46
+OBJC_SELECTOR_REFERENCES_47
+.str48
+_unnamed_cfstring_49
+OBJC_IVAR_$_BFCancellationToken._disposed
+OBJC_CLASS_NAME_
+l_OBJC_METACLASS_RO_$_BFCancellationToken
+OBJC_CLASS_NAME_50
+OBJC_METH_VAR_TYPE_
+OBJC_METH_VAR_TYPE_51
+OBJC_METH_VAR_TYPE_52
+OBJC_METH_VAR_TYPE_53
+OBJC_METH_VAR_NAME_54
+OBJC_METH_VAR_TYPE_55
+OBJC_METH_VAR_NAME_56
+OBJC_METH_VAR_NAME_57
+OBJC_METH_VAR_TYPE_58
+OBJC_METH_VAR_NAME_59
+OBJC_METH_VAR_NAME_60
+OBJC_METH_VAR_TYPE_61
+OBJC_METH_VAR_NAME_62
+OBJC_METH_VAR_NAME_63
+l_OBJC_$_INSTANCE_METHODS_BFCancellationToken
+OBJC_METH_VAR_NAME_64
+OBJC_METH_VAR_TYPE_65
+OBJC_METH_VAR_NAME_66
+OBJC_METH_VAR_NAME_67
+OBJC_METH_VAR_TYPE_68
+OBJC_METH_VAR_NAME_69
+OBJC_METH_VAR_TYPE_70
+l_OBJC_$_INSTANCE_VARIABLES_BFCancellationToken
+OBJC_PROP_NAME_ATTR_
+OBJC_PROP_NAME_ATTR_71
+OBJC_PROP_NAME_ATTR_72
+OBJC_PROP_NAME_ATTR_73
+OBJC_PROP_NAME_ATTR_74
+OBJC_PROP_NAME_ATTR_75
+OBJC_PROP_NAME_ATTR_76
+OBJC_PROP_NAME_ATTR_77
+l_OBJC_$_PROP_LIST_BFCancellationToken
+l_OBJC_CLASS_RO_$_BFCancellationToken
+OBJC_LABEL_CLASS_$
+Apple LLVM version 7.0.0 (clang-700.1.76)
+/Users/henry/Library/Developer/Xcode/DerivedData/ModuleCache/UBSBHOS9I5HX/ObjectiveC-2CD0WTQVXITO7.pcm
+ObjectiveC
+/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.1.sdk/usr/include/objc
+/Users/henry/Library/Developer/Xcode/DerivedData/ModuleCache/UBSBHOS9I5HX/Foundation-A3SOD99KJ0S9.pcm
+Foundation
+/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.1.sdk/System/Library/Frameworks/Foundation.framework
+/Users/henry/Library/Developer/Xcode/DerivedData/ModuleCache/UBSBHOS9I5HX/UIKit-2LM3EQU7VVY4O.pcm
+UIKit
+/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.1.sdk/System/Library/Frameworks/UIKit.framework
+-[BFCancellationToken .cxx_destruct]
+/Users/henry/Documents/NU/_Fall15/EECS338/SocialTemp-ios/Pods/Bolts/Bolts/Common/BFCancellationToken.m
+/Users/henry/Documents/NU/_Fall15/EECS338/SocialTemp-ios/Pods
+-[BFCancellationToken setDisposed:]
+-[BFCancellationToken disposed]
+-[BFCancellationToken setLock:]
+-[BFCancellationToken lock]
+-[BFCancellationToken setRegistrations:]
+-[BFCancellationToken registrations]
+-[BFCancellationToken setCancellationRequested:]
+-[BFCancellationToken throwIfDisposed]
+-[BFCancellationToken dispose]
+-[BFCancellationToken cancelAfterDelay:]
+-[BFCancellationToken cancelPrivate]
+-[BFCancellationToken unregisterRegistration:]
+-[BFCancellationToken registerCancellationObserverWithBlock:]
+-[BFCancellationToken notifyCancellation:]
+-[BFCancellationToken cancel]
+-[BFCancellationToken isCancellationRequested]
+-[BFCancellationToken init]
++[BFCancellationTokenRegistration registrationWithToken:delegate:]
+-[BFCancellationTokenRegistration init]
+-[BFCancellationTokenRegistration dispose]
+-[BFCancellationTokenRegistration notifyDelegate]
+-[BFCancellationTokenRegistration throwIfDisposed]
+-[BFCancellationTokenRegistration token]
+-[BFCancellationTokenRegistration setToken:]
+-[BFCancellationTokenRegistration cancellationObserverBlock]
+-[BFCancellationTokenRegistration setCancellationObserverBlock:]
+-[BFCancellationTokenRegistration lock]
+-[BFCancellationTokenRegistration setLock:]
+-[BFCancellationTokenRegistration disposed]
+-[BFCancellationTokenRegistration setDisposed:]
+-[BFCancellationTokenRegistration .cxx_destruct]
+OBJC_METH_VAR_NAME_3
+OBJC_SELECTOR_REFERENCES_4
+OBJC_METH_VAR_NAME_5
+OBJC_SELECTOR_REFERENCES_6
+OBJC_CLASSLIST_REFERENCES_$_7
+OBJC_IVAR_$_BFCancellationTokenRegistration._lock
+OBJC_IVAR_$_BFCancellationTokenRegistration._token
+OBJC_IVAR_$_BFCancellationTokenRegistration._cancellationObserverBlock
+OBJC_IVAR_$_BFCancellationTokenRegistration._disposed
+l_OBJC_$_CLASS_METHODS_BFCancellationTokenRegistration
+l_OBJC_METACLASS_RO_$_BFCancellationTokenRegistration
+OBJC_CLASS_NAME_23
+OBJC_METH_VAR_TYPE_24
+OBJC_METH_VAR_TYPE_26
+OBJC_METH_VAR_NAME_28
+OBJC_METH_VAR_TYPE_29
+OBJC_METH_VAR_TYPE_30
+OBJC_METH_VAR_TYPE_31
+OBJC_METH_VAR_NAME_32
+OBJC_METH_VAR_TYPE_33
+OBJC_METH_VAR_TYPE_34
+l_OBJC_$_INSTANCE_METHODS_BFCancellationTokenRegistration
+OBJC_METH_VAR_NAME_35
+OBJC_METH_VAR_TYPE_36
+OBJC_METH_VAR_NAME_37
+OBJC_METH_VAR_TYPE_38
+OBJC_METH_VAR_NAME_39
+OBJC_METH_VAR_TYPE_40
+OBJC_METH_VAR_NAME_41
+OBJC_METH_VAR_TYPE_42
+l_OBJC_$_INSTANCE_VARIABLES_BFCancellationTokenRegistration
+OBJC_CLASS_NAME_43
+OBJC_PROP_NAME_ATTR_44
+OBJC_PROP_NAME_ATTR_45
+OBJC_PROP_NAME_ATTR_46
+OBJC_PROP_NAME_ATTR_47
+OBJC_PROP_NAME_ATTR_48
+OBJC_PROP_NAME_ATTR_49
+OBJC_PROP_NAME_ATTR_50
+l_OBJC_$_PROP_LIST_BFCancellationTokenRegistration
+l_OBJC_CLASS_RO_$_BFCancellationTokenRegistration
+-[BFCancellationTokenRegistration .cxx_destruct]
+/Users/henry/Documents/NU/_Fall15/EECS338/SocialTemp-ios/Pods/Bolts/Bolts/Common/BFCancellationTokenRegistration.m
+-[BFCancellationTokenRegistration setDisposed:]
+-[BFCancellationTokenRegistration disposed]
+-[BFCancellationTokenRegistration setLock:]
+-[BFCancellationTokenRegistration lock]
+-[BFCancellationTokenRegistration setCancellationObserverBlock:]
+-[BFCancellationTokenRegistration cancellationObserverBlock]
+-[BFCancellationTokenRegistration setToken:]
+-[BFCancellationTokenRegistration token]
+-[BFCancellationTokenRegistration throwIfDisposed]
+-[BFCancellationTokenRegistration notifyDelegate]
+-[BFCancellationTokenRegistration dispose]
+-[BFCancellationTokenRegistration init]
++[BFCancellationTokenRegistration registrationWithToken:delegate:]
+-[BFCancellationTokenSource init]
++[BFCancellationTokenSource cancellationTokenSource]
+-[BFCancellationTokenSource isCancellationRequested]
+-[BFCancellationTokenSource cancel]
+-[BFCancellationTokenSource cancelAfterDelay:]
+-[BFCancellationTokenSource dispose]
+-[BFCancellationTokenSource token]
+-[BFCancellationTokenSource .cxx_destruct]
+OBJC_IVAR_$_BFCancellationTokenSource._token
+l_OBJC_$_CLASS_METHODS_BFCancellationTokenSource
+l_OBJC_METACLASS_RO_$_BFCancellationTokenSource
+OBJC_CLASS_NAME_13
+OBJC_METH_VAR_TYPE_14
+OBJC_METH_VAR_TYPE_15
+OBJC_METH_VAR_TYPE_16
+OBJC_METH_VAR_NAME_17
+l_OBJC_$_INSTANCE_METHODS_BFCancellationTokenSource
+OBJC_METH_VAR_NAME_19
+OBJC_METH_VAR_TYPE_20
+l_OBJC_$_INSTANCE_VARIABLES_BFCancellationTokenSource
+OBJC_PROP_NAME_ATTR_21
+OBJC_PROP_NAME_ATTR_22
+OBJC_PROP_NAME_ATTR_23
+l_OBJC_$_PROP_LIST_BFCancellationTokenSource
+l_OBJC_CLASS_RO_$_BFCancellationTokenSource
+-[BFCancellationTokenSource .cxx_destruct]
+/Users/henry/Documents/NU/_Fall15/EECS338/SocialTemp-ios/Pods/Bolts/Bolts/Common/BFCancellationTokenSource.m
+-[BFCancellationTokenSource token]
+/Users/henry/Documents/NU/_Fall15/EECS338/SocialTemp-ios/Pods/Bolts/Bolts/Common/BFCancellationTokenSource.h
+-[BFCancellationTokenSource dispose]
+-[BFCancellationTokenSource cancelAfterDelay:]
+-[BFCancellationTokenSource cancel]
+-[BFCancellationTokenSource isCancellationRequested]
++[BFCancellationTokenSource cancellationTokenSource]
+-[BFCancellationTokenSource init]
++[BFExecutor defaultExecutor]
+__29+[BFExecutor defaultExecutor]_block_invoke
+__29+[BFExecutor defaultExecutor]_block_invoke_2
+__copy_helper_block_
+__destroy_helper_block_
++[BFExecutor immediateExecutor]
+__31+[BFExecutor immediateExecutor]_block_invoke
+__31+[BFExecutor immediateExecutor]_block_invoke_2
+__copy_helper_block_19
+__destroy_helper_block_20
++[BFExecutor mainThreadExecutor]
+__32+[BFExecutor mainThreadExecutor]_block_invoke
+__32+[BFExecutor mainThreadExecutor]_block_invoke_2
+__copy_helper_block_27
+__destroy_helper_block_28
++[BFExecutor executorWithBlock:]
++[BFExecutor executorWithDispatchQueue:]
+__40+[BFExecutor executorWithDispatchQueue:]_block_invoke
++[BFExecutor executorWithOperationQueue:]
+__41+[BFExecutor executorWithOperationQueue:]_block_invoke
+__copy_helper_block_42
+__destroy_helper_block_43
+-[BFExecutor initWithBlock:]
+-[BFExecutor execute:]
+-[BFExecutor block]
+-[BFExecutor setBlock:]
+-[BFExecutor .cxx_destruct]
+defaultExecutor.defaultExecutor
+defaultExecutor.onceToken
+OBJC_CLASSLIST_REFERENCES_$_5
+.str12
+__block_descriptor_tmp
+__block_literal_global
+OBJC_METH_VAR_NAME_13
+OBJC_SELECTOR_REFERENCES_14
+.str15
+__block_descriptor_tmp16
+immediateExecutor.immediateExecutor
+immediateExecutor.onceToken
+__block_descriptor_tmp17
+__block_literal_global18
+OBJC_CLASS_NAME_21
+__block_descriptor_tmp22
+mainThreadExecutor.mainThreadExecutor
+mainThreadExecutor.onceToken
+OBJC_METH_VAR_NAME_23
+OBJC_SELECTOR_REFERENCES_24
+__block_descriptor_tmp25
+__block_literal_global26
+OBJC_CLASS_NAME_29
+__block_descriptor_tmp30
+OBJC_METH_VAR_NAME_33
+OBJC_SELECTOR_REFERENCES_34
+OBJC_CLASS_NAME_35
+__block_descriptor_tmp36
+OBJC_CLASSLIST_REFERENCES_$_37
+__block_descriptor_tmp44
+OBJC_METH_VAR_NAME_45
+OBJC_SELECTOR_REFERENCES_46
+OBJC_IVAR_$_BFExecutor._block
+OBJC_METH_VAR_NAME_47
+OBJC_SELECTOR_REFERENCES_48
+OBJC_CLASS_NAME_49
+OBJC_METH_VAR_NAME_50
+OBJC_METH_VAR_NAME_51
+OBJC_METH_VAR_NAME_52
+OBJC_METH_VAR_TYPE_57
+l_OBJC_$_CLASS_METHODS_BFExecutor
+l_OBJC_METACLASS_RO_$_BFExecutor
+OBJC_CLASS_NAME_58
+OBJC_METH_VAR_TYPE_60
+OBJC_METH_VAR_NAME_61
+OBJC_METH_VAR_TYPE_62
+OBJC_METH_VAR_TYPE_63
+l_OBJC_$_INSTANCE_METHODS_BFExecutor
+OBJC_METH_VAR_NAME_65
+OBJC_METH_VAR_TYPE_66
+l_OBJC_$_INSTANCE_VARIABLES_BFExecutor
+OBJC_PROP_NAME_ATTR_67
+l_OBJC_$_PROP_LIST_BFExecutor
+l_OBJC_CLASS_RO_$_BFExecutor
+/Users/henry/Library/Developer/Xcode/DerivedData/ModuleCache/UBSBHOS9I5HX/Dispatch-12O7S7HHQXK9N.pcm
+Dispatch
+dispatch_get_main_queue
+/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.1.sdk/usr/include/dispatch/queue.h
+_dispatch_once
+/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.1.sdk/usr/include/dispatch/once.h
+-[BFExecutor .cxx_destruct]
+/Users/henry/Documents/NU/_Fall15/EECS338/SocialTemp-ios/Pods/Bolts/Bolts/Common/BFExecutor.m
+-[BFExecutor setBlock:]
+-[BFExecutor block]
+-[BFExecutor execute:]
+-[BFExecutor initWithBlock:]
++[BFExecutor executorWithOperationQueue:]
++[BFExecutor executorWithDispatchQueue:]
++[BFExecutor executorWithBlock:]
++[BFExecutor mainThreadExecutor]
++[BFExecutor immediateExecutor]
++[BFExecutor defaultExecutor]
+-[BFTask init]
++[BFTask taskWithResult:]
++[BFTask taskWithError:]
++[BFTask taskWithException:]
++[BFTask cancelledTask]
++[BFTask taskForCompletionOfAllTasks:]
+__38+[BFTask taskForCompletionOfAllTasks:]_block_invoke
++[BFTask taskForCompletionOfAllTasksWithResults:]
+__49+[BFTask taskForCompletionOfAllTasksWithResults:]_block_invoke
+__copy_helper_block_64
+__destroy_helper_block_65
++[BFTask taskWithDelay:]
+__24+[BFTask taskWithDelay:]_block_invoke
+__copy_helper_block_69
+__destroy_helper_block_70
++[BFTask taskWithDelay:cancellationToken:]
+__42+[BFTask taskWithDelay:cancellationToken:]_block_invoke
+__copy_helper_block_78
+__destroy_helper_block_79
++[BFTask taskFromExecutor:withBlock:]
+__37+[BFTask taskFromExecutor:withBlock:]_block_invoke
+__copy_helper_block_81
+__destroy_helper_block_82
+-[BFTask result]
+-[BFTask setResult:]
+-[BFTask trySetResult:]
+-[BFTask error]
+-[BFTask setError:]
+-[BFTask trySetError:]
+-[BFTask exception]
+-[BFTask setException:]
+-[BFTask trySetException:]
+-[BFTask isCancelled]
+-[BFTask isFaulted]
+-[BFTask cancel]
+-[BFTask trySetCancelled]
+-[BFTask isCompleted]
+-[BFTask setCompleted]
+-[BFTask runContinuations]
+-[BFTask continueWithExecutor:withBlock:]
+-[BFTask continueWithExecutor:block:cancellationToken:]
+__55-[BFTask continueWithExecutor:block:cancellationToken:]_block_invoke
+__55-[BFTask continueWithExecutor:block:cancellationToken:]_block_invoke_2
+__55-[BFTask continueWithExecutor:block:cancellationToken:]_block_invoke_3
+__copy_helper_block_134
+__destroy_helper_block_135
+__copy_helper_block_137
+__destroy_helper_block_138
+__copy_helper_block_142
+__destroy_helper_block_143
+-[BFTask continueWithBlock:]
+-[BFTask continueWithBlock:cancellationToken:]
+-[BFTask continueWithExecutor:withSuccessBlock:]
+-[BFTask continueWithExecutor:successBlock:cancellationToken:]
+__62-[BFTask continueWithExecutor:successBlock:cancellationToken:]_block_invoke
+__copy_helper_block_154
+__destroy_helper_block_155
+-[BFTask continueWithSuccessBlock:]
+-[BFTask continueWithSuccessBlock:cancellationToken:]
+-[BFTask warnOperationOnMainThread]
+-[BFTask waitUntilFinished]
+-[BFTask description]
+-[BFTask setCancelled:]
+-[BFTask setFaulted:]
+-[BFTask setCompleted:]
+-[BFTask lock]
+-[BFTask setLock:]
+-[BFTask condition]
+-[BFTask setCondition:]
+-[BFTask callbacks]
+-[BFTask setCallbacks:]
+-[BFTask .cxx_destruct]
+.str1
+_unnamed_cfstring_2
+.str3
+_unnamed_cfstring_4
+OBJC_IVAR_$_BFTask._lock
+OBJC_IVAR_$_BFTask._condition
+OBJC_CLASSLIST_REFERENCES_$_8
+OBJC_METH_VAR_NAME_9
+OBJC_SELECTOR_REFERENCES_10
+OBJC_IVAR_$_BFTask._callbacks
+OBJC_CLASSLIST_REFERENCES_$_11
+OBJC_METH_VAR_NAME_24
+OBJC_SELECTOR_REFERENCES_25
+OBJC_METH_VAR_NAME_26
+OBJC_SELECTOR_REFERENCES_27
+OBJC_SELECTOR_REFERENCES_29
+OBJC_METH_VAR_NAME_30
+OBJC_SELECTOR_REFERENCES_31
+OBJC_SELECTOR_REFERENCES_33
+OBJC_CLASSLIST_REFERENCES_$_40
+.str41
+_unnamed_cfstring_42
+.str43
+_unnamed_cfstring_44
+OBJC_CLASSLIST_REFERENCES_$_45
+OBJC_METH_VAR_NAME_48
+OBJC_SELECTOR_REFERENCES_49
+OBJC_CLASSLIST_REFERENCES_$_50
+.str51
+_unnamed_cfstring_52
+OBJC_METH_VAR_NAME_53
+OBJC_SELECTOR_REFERENCES_54
+.str55
+OBJC_SELECTOR_REFERENCES_57
+OBJC_METH_VAR_NAME_58
+OBJC_SELECTOR_REFERENCES_59
+.str60
+_unnamed_cfstring_61
+OBJC_SELECTOR_REFERENCES_63
+__block_descriptor_tmp66
+OBJC_SELECTOR_REFERENCES_68
+.str71
+__block_descriptor_tmp72
+OBJC_METH_VAR_NAME_73
+OBJC_SELECTOR_REFERENCES_74
+OBJC_CLASSLIST_REFERENCES_$_75
+OBJC_METH_VAR_NAME_76
+OBJC_SELECTOR_REFERENCES_77
+__block_descriptor_tmp80
+__block_descriptor_tmp83
+OBJC_METH_VAR_NAME_84
+OBJC_SELECTOR_REFERENCES_85
+OBJC_METH_VAR_NAME_86
+OBJC_SELECTOR_REFERENCES_87
+OBJC_IVAR_$_BFTask._result
+OBJC_METH_VAR_NAME_88
+OBJC_SELECTOR_REFERENCES_89
+.str90
+_unnamed_cfstring_91
+OBJC_METH_VAR_NAME_92
+OBJC_SELECTOR_REFERENCES_93
+OBJC_METH_VAR_NAME_94
+OBJC_SELECTOR_REFERENCES_95
+OBJC_METH_VAR_NAME_96
+OBJC_SELECTOR_REFERENCES_97
+OBJC_METH_VAR_NAME_98
+OBJC_SELECTOR_REFERENCES_99
+OBJC_IVAR_$_BFTask._error
+OBJC_METH_VAR_NAME_100
+OBJC_SELECTOR_REFERENCES_101
+.str102
+_unnamed_cfstring_103
+OBJC_METH_VAR_NAME_104
+OBJC_SELECTOR_REFERENCES_105
+OBJC_IVAR_$_BFTask._exception
+OBJC_METH_VAR_NAME_106
+OBJC_SELECTOR_REFERENCES_107
+.str108
+_unnamed_cfstring_109
+OBJC_IVAR_$_BFTask._cancelled
+OBJC_IVAR_$_BFTask._faulted
+OBJC_METH_VAR_NAME_110
+OBJC_SELECTOR_REFERENCES_111
+.str112
+_unnamed_cfstring_113
+OBJC_METH_VAR_NAME_114
+OBJC_SELECTOR_REFERENCES_115
+OBJC_IVAR_$_BFTask._completed
+OBJC_METH_VAR_NAME_116
+OBJC_SELECTOR_REFERENCES_117
+OBJC_METH_VAR_NAME_118
+OBJC_SELECTOR_REFERENCES_119
+OBJC_METH_VAR_NAME_120
+OBJC_SELECTOR_REFERENCES_121
+OBJC_METH_VAR_NAME_122
+OBJC_SELECTOR_REFERENCES_123
+OBJC_METH_VAR_NAME_124
+OBJC_SELECTOR_REFERENCES_125
+OBJC_METH_VAR_NAME_126
+OBJC_SELECTOR_REFERENCES_127
+OBJC_METH_VAR_NAME_128
+OBJC_SELECTOR_REFERENCES_129
+OBJC_METH_VAR_NAME_130
+OBJC_SELECTOR_REFERENCES_131
+OBJC_METH_VAR_NAME_132
+OBJC_SELECTOR_REFERENCES_133
+__block_descriptor_tmp136
+__block_descriptor_tmp139
+OBJC_METH_VAR_NAME_140
+OBJC_SELECTOR_REFERENCES_141
+__block_descriptor_tmp144
+OBJC_METH_VAR_NAME_145
+OBJC_SELECTOR_REFERENCES_146
+OBJC_CLASSLIST_REFERENCES_$_147
+OBJC_METH_VAR_NAME_148
+OBJC_SELECTOR_REFERENCES_149
+OBJC_METH_VAR_NAME_150
+OBJC_SELECTOR_REFERENCES_151
+OBJC_METH_VAR_NAME_152
+OBJC_SELECTOR_REFERENCES_153
+__block_descriptor_tmp156
+OBJC_CLASSLIST_REFERENCES_$_157
+OBJC_METH_VAR_NAME_158
+OBJC_SELECTOR_REFERENCES_159
+OBJC_METH_VAR_NAME_160
+OBJC_SELECTOR_REFERENCES_161
+OBJC_METH_VAR_NAME_162
+OBJC_SELECTOR_REFERENCES_163
+OBJC_CLASSLIST_REFERENCES_$_164
+.str165
+_unnamed_cfstring_166
+.str167
+_unnamed_cfstring_168
+.str169
+_unnamed_cfstring_170
+.str171
+_unnamed_cfstring_172
+OBJC_METH_VAR_NAME_173
+OBJC_SELECTOR_REFERENCES_174
+.str175
+_unnamed_cfstring_176
+OBJC_METH_VAR_NAME_177
+OBJC_METH_VAR_NAME_178
+OBJC_METH_VAR_TYPE_179
+OBJC_METH_VAR_NAME_180
+OBJC_METH_VAR_NAME_181
+OBJC_METH_VAR_TYPE_182
+OBJC_METH_VAR_NAME_183
+OBJC_METH_VAR_TYPE_184
+OBJC_METH_VAR_NAME_185
+OBJC_METH_VAR_TYPE_186
+l_OBJC_$_CLASS_METHODS_BFTask
+l_OBJC_METACLASS_RO_$_BFTask
+OBJC_CLASS_NAME_187
+OBJC_METH_VAR_TYPE_188
+OBJC_METH_VAR_TYPE_189
+OBJC_METH_VAR_TYPE_190
+OBJC_METH_VAR_TYPE_191
+OBJC_METH_VAR_NAME_192
+OBJC_METH_VAR_TYPE_193
+OBJC_METH_VAR_TYPE_194
+OBJC_METH_VAR_NAME_195
+OBJC_METH_VAR_TYPE_196
+OBJC_METH_VAR_NAME_197
+OBJC_METH_VAR_NAME_198
+OBJC_METH_VAR_NAME_199
+OBJC_METH_VAR_NAME_200
+OBJC_METH_VAR_NAME_201
+OBJC_METH_VAR_TYPE_202
+OBJC_METH_VAR_NAME_203
+OBJC_METH_VAR_NAME_204
+OBJC_METH_VAR_NAME_205
+l_OBJC_$_INSTANCE_METHODS_BFTask
+OBJC_METH_VAR_NAME_206
+OBJC_METH_VAR_TYPE_207
+OBJC_METH_VAR_NAME_208
+OBJC_METH_VAR_TYPE_209
+OBJC_METH_VAR_NAME_210
+OBJC_METH_VAR_TYPE_211
+OBJC_METH_VAR_NAME_212
+OBJC_METH_VAR_TYPE_213
+OBJC_METH_VAR_NAME_214
+OBJC_METH_VAR_NAME_215
+OBJC_METH_VAR_NAME_216
+OBJC_METH_VAR_TYPE_217
+OBJC_METH_VAR_NAME_218
+OBJC_METH_VAR_TYPE_219
+OBJC_METH_VAR_NAME_220
+OBJC_METH_VAR_TYPE_221
+l_OBJC_$_INSTANCE_VARIABLES_BFTask
+OBJC_PROP_NAME_ATTR_222
+OBJC_PROP_NAME_ATTR_223
+OBJC_PROP_NAME_ATTR_224
+OBJC_PROP_NAME_ATTR_225
+OBJC_PROP_NAME_ATTR_226
+OBJC_PROP_NAME_ATTR_227
+OBJC_PROP_NAME_ATTR_228
+OBJC_PROP_NAME_ATTR_229
+OBJC_PROP_NAME_ATTR_230
+OBJC_PROP_NAME_ATTR_231
+OBJC_PROP_NAME_ATTR_232
+OBJC_PROP_NAME_ATTR_233
+OBJC_PROP_NAME_ATTR_234
+OBJC_PROP_NAME_ATTR_235
+OBJC_PROP_NAME_ATTR_236
+OBJC_PROP_NAME_ATTR_237
+OBJC_PROP_NAME_ATTR_238
+l_OBJC_$_PROP_LIST_BFTask
+l_OBJC_CLASS_RO_$_BFTask
+/Users/henry/Library/Developer/Xcode/DerivedData/ModuleCache/UBSBHOS9I5HX/Darwin-MI6WZSG1PNOM.pcm
+Darwin
+/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.1.sdk/usr/include
+-[BFTask .cxx_destruct]
+/Users/henry/Documents/NU/_Fall15/EECS338/SocialTemp-ios/Pods/Bolts/Bolts/Common/BFTask.m
+-[BFTask setCallbacks:]
+-[BFTask callbacks]
+-[BFTask setCondition:]
+-[BFTask condition]
+-[BFTask setLock:]
+-[BFTask lock]
+-[BFTask setCompleted:]
+-[BFTask setFaulted:]
+-[BFTask setCancelled:]
+-[BFTask description]
+-[BFTask waitUntilFinished]
+-[BFTask warnOperationOnMainThread]
+-[BFTask continueWithSuccessBlock:cancellationToken:]
+-[BFTask continueWithSuccessBlock:]
+-[BFTask continueWithExecutor:successBlock:cancellationToken:]
+-[BFTask continueWithExecutor:withSuccessBlock:]
+-[BFTask continueWithBlock:cancellationToken:]
+-[BFTask continueWithBlock:]
+-[BFTask continueWithExecutor:block:cancellationToken:]
+-[BFTask continueWithExecutor:withBlock:]
+-[BFTask runContinuations]
+-[BFTask setCompleted]
+-[BFTask isCompleted]
+-[BFTask trySetCancelled]
+-[BFTask cancel]
+-[BFTask isFaulted]
+-[BFTask isCancelled]
+-[BFTask trySetException:]
+-[BFTask setException:]
+-[BFTask exception]
+-[BFTask trySetError:]
+-[BFTask setError:]
+-[BFTask error]
+-[BFTask trySetResult:]
+-[BFTask setResult:]
+-[BFTask result]
++[BFTask taskFromExecutor:withBlock:]
++[BFTask taskWithDelay:cancellationToken:]
++[BFTask taskWithDelay:]
++[BFTask taskForCompletionOfAllTasksWithResults:]
++[BFTask taskForCompletionOfAllTasks:]
++[BFTask cancelledTask]
++[BFTask taskWithException:]
++[BFTask taskWithError:]
++[BFTask taskWithResult:]
+-[BFTask init]
+warnBlockingOperationOnMainThread
++[BFTaskCompletionSource taskCompletionSource]
+-[BFTaskCompletionSource init]
+-[BFTaskCompletionSource setResult:]
+-[BFTaskCompletionSource setError:]
+-[BFTaskCompletionSource setException:]
+-[BFTaskCompletionSource cancel]
+-[BFTaskCompletionSource trySetResult:]
+-[BFTaskCompletionSource trySetError:]
+-[BFTaskCompletionSource trySetException:]
+-[BFTaskCompletionSource trySetCancelled]
+-[BFTaskCompletionSource task]
+-[BFTaskCompletionSource setTask:]
+-[BFTaskCompletionSource .cxx_destruct]
+OBJC_IVAR_$_BFTaskCompletionSource._task
+OBJC_METH_VAR_NAME_7
+OBJC_SELECTOR_REFERENCES_8
+OBJC_METH_VAR_NAME_11
+OBJC_SELECTOR_REFERENCES_12
+OBJC_METH_VAR_NAME_15
+OBJC_SELECTOR_REFERENCES_16
+OBJC_SELECTOR_REFERENCES_18
+OBJC_SELECTOR_REFERENCES_20
+OBJC_METH_VAR_NAME_21
+l_OBJC_$_CLASS_METHODS_BFTaskCompletionSource
+l_OBJC_METACLASS_RO_$_BFTaskCompletionSource
+OBJC_CLASS_NAME_22
+OBJC_METH_VAR_TYPE_23
+OBJC_METH_VAR_TYPE_25
+l_OBJC_$_INSTANCE_METHODS_BFTaskCompletionSource
+l_OBJC_$_INSTANCE_VARIABLES_BFTaskCompletionSource
+OBJC_PROP_NAME_ATTR_31
+l_OBJC_$_PROP_LIST_BFTaskCompletionSource
+l_OBJC_CLASS_RO_$_BFTaskCompletionSource
+-[BFTaskCompletionSource .cxx_destruct]
+/Users/henry/Documents/NU/_Fall15/EECS338/SocialTemp-ios/Pods/Bolts/Bolts/Common/BFTaskCompletionSource.m
+-[BFTaskCompletionSource setTask:]
+-[BFTaskCompletionSource task]
+/Users/henry/Documents/NU/_Fall15/EECS338/SocialTemp-ios/Pods/Bolts/Bolts/Common/BFTaskCompletionSource.h
+-[BFTaskCompletionSource trySetCancelled]
+-[BFTaskCompletionSource trySetException:]
+-[BFTaskCompletionSource trySetError:]
+-[BFTaskCompletionSource trySetResult:]
+-[BFTaskCompletionSource cancel]
+-[BFTaskCompletionSource setException:]
+-[BFTaskCompletionSource setError:]
+-[BFTaskCompletionSource setResult:]
+-[BFTaskCompletionSource init]
++[BFTaskCompletionSource taskCompletionSource]
+l_OBJC_METACLASS_RO_$_PodsDummy_Bolts
+l_OBJC_CLASS_RO_$_PodsDummy_Bolts
+/Users/henry/Library/Developer/Xcode/DerivedData/ModuleCache/1HS2LHUGVMT60/ObjectiveC-2CD0WTQVXITO7.pcm
+/Users/henry/Library/Developer/Xcode/DerivedData/ModuleCache/1HS2LHUGVMT60/Foundation-A3SOD99KJ0S9.pcm
+/Users/henry/Library/Developer/Xcode/DerivedData/ModuleCache/1HS2LHUGVMT60/UIKit-2LM3EQU7VVY4O.pcm
+/Users/henry/Documents/NU/_Fall15/EECS338/SocialTemp-ios/Pods/Target Support Files/Bolts/Bolts-dummy.m
++[Bolts version]
+l_OBJC_$_CLASS_METHODS_Bolts
+l_OBJC_METACLASS_RO_$_Bolts
+l_OBJC_CLASS_RO_$_Bolts
++[Bolts version]
+/Users/henry/Documents/NU/_Fall15/EECS338/SocialTemp-ios/Pods/Bolts/Bolts/Common/Bolts.m
+/Users/henry/Library/Developer/Xcode/DerivedData/SocialTemp-ios-gosqvrrlczuqnhabvtlckqvhzwzt/Build/Intermediates/ArchiveIntermediates/SocialTemp-ios/IntermediateBuildFilesPath/Pods.build/Release-iphoneos/Bolts.build/DerivedSources/Bolts_vers.c
+Apple LLVM version 7.0.0 (clang-700.1.75)
+/var/folders/zz/zyxvpxvq6csfxvn_n0000000000000/C/org.llvm.clang.root/ModuleCache/1PKN476Z26K39/Foundation-E7AIY98HG4IO.pcm
+/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.1.Internal.sdk/System/Library/Frameworks/Foundation.framework
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch arm64 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -Wno-trigraphs -mpascal-strings -Os -Wno-missing-field-initializers -Wmissing-prototypes -Wno-implicit-atomic-properties -Wno-arc-repeated-use-of-weak -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -D NDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.1.Internal.sdk -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -miphoneos-version-min=4.3 -g -Wno-sign-conversion -fembed-bitcode -iquote /Library/Caches/com.apple.xbs/Binaries/arclite_iOS/arclite_iOS-63~53/Objects/arclite.build/arclite_iOS.build/arclite_iphoneos-generated-files.hmap -I /Library/Caches/com.apple.xbs/Binaries/arclite_iOS/arclite_iOS-63~53/Objects/arclite.build/arclite_iOS.build/arclite_iphoneos-own-target-headers.hmap -I /Library/Caches/com.apple.xbs/Binaries/arclite_iOS/arclite_iOS-63~53/Objects/arclite.build/arclite_iOS.build/arclite_iphoneos-all-target-headers.hmap -iquote /Library/Caches/com.apple.xbs/Binaries/arclite_iOS/arclite_iOS-63~53/Objects/arclite.build/arclite_iOS.build/arclite_iphoneos-project-headers.hmap -I /Library/Caches/com.apple.xbs/Binaries/arclite_iOS/arclite_iOS-63~53/Symbols/BuiltProducts/include -I /Library/Caches/com.apple.xbs/Binaries/arclite_iOS/arclite_iOS-63~53/Objects/arclite.build/arclite_iOS.build/DerivedSources/arm64 -I /Library/Caches/com.apple.xbs/Binaries/arclite_iOS/arclite_iOS-63~53/Objects/arclite.build/arclite_iOS.build/DerivedSources -F/Library/Caches/com.apple.xbs/Binaries/arclite_iOS/arclite_iOS-63~53/Symbols/BuiltProducts -F/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.1.Internal.sdk/System/Library/PrivateFrameworks -Wall -Wextra -Wno-gcc-compat -fgnu-inline-asm -fmodules -MMD -MT dependencies -MF /Library/Caches/com.apple.xbs/Binaries/arclite_iOS/arclite_iOS-63~53/Objects/arclite.build/arclite_iOS.build/Objects-normal/arm64/cf.d --serialize-diagnostics /Library/Caches/com.apple.xbs/Binaries/arclite_iOS/arclite_iOS-63~53/Objects/arclite.build/arclite_iOS.build/Objects-normal/arm64/cf.dia -c /Library/Caches/com.apple.xbs/Sources/arclite_iOS/arclite-63/source/cf.m -o /Library/Caches/com.apple.xbs/Binaries/arclite_iOS/arclite_iOS-63~53/Objects/arclite.build/arclite_iOS.build/Objects-normal/arm64/cf.o -mlinker-version=253.3.2
+/Library/Caches/com.apple.xbs/Sources/arclite_iOS/arclite-63/source/cf.m
+/Library/Caches/com.apple.xbs/Sources/arclite_iOS/arclite-63
+_ZL15__ARCLite__loadv
+_ZL58__arclite_NSMutableDictionary__setObject_forKeyedSubscriptP19NSMutableDictionaryP13objc_selectorP11objc_objectS4_
+_ZL22add_image_hook_swiftV1PK11mach_headerl
+_ZL42__arclite_NSUndoManagerProxy_isKindOfClassP11objc_objectP13objc_selectorP10objc_class
+_ZL13replaceMethodP10objc_classP13objc_selectorPFP11objc_objectS4_S2_zEPS6_
+_ZL30__arclite_NSManagedObject_initP11objc_objectP13objc_selector
+_ZL41__arclite_NSManagedObject_allocWithEntityP11objc_objectP13objc_selectorS0_
+_ZL36__arclite_NSManagedObject_allocBatchP11objc_objectP13objc_selectorPS0_S0_j
+_ZL37__arclite_NSKKMS_fastIndexForKnownKeyP11objc_objectP13objc_selectorS0_
+_ZL28__arclite_NSKKMS_indexForKeyP11objc_objectP13objc_selectorS0_
+_ZL29__arclite_NSKKsD_objectForKeyP11objc_objectP13objc_selectorS0_
+_ZL35__arclite_NSKKsD_removeObjectForKeyP11objc_objectP13objc_selectorS0_
+_ZL33__arclite_NSKKsD_setObject_forKeyP11objc_objectP13objc_selectorS0_S0_
+_ZL41__arclite_NSKKsD_addEntriesFromDictionaryP11objc_objectP13objc_selectorP12NSDictionary
+_ZL28__arclite_objc_readClassPairP10objc_classPK15objc_image_info
+_ZL32__arclite_objc_allocateClassPairP10objc_classPKcm
+_ZL32__arclite_object_getIndexedIvarsP11objc_object
+_ZL23__arclite_objc_getClassPKc
+_ZL27__arclite_objc_getMetaClassPKc
+_ZL31__arclite_objc_getRequiredClassPKc
+_ZL26__arclite_objc_lookUpClassPKc
+_ZL26__arclite_objc_getProtocolPKc
+_ZL23__arclite_class_getNameP10objc_class
+_ZL26__arclite_protocol_getNameP8Protocol
+_ZL37__arclite_objc_copyClassNamesForImagePKcPj
+_ZL17transcribeMethodsP10objc_classP15glue_class_ro_t
+_ZL19transcribeProtocolsP10objc_classP15glue_class_ro_t
+_ZL20transcribePropertiesP10objc_classP15glue_class_ro_t
+_ZL14initialize_impP11objc_objectP13objc_selector
+_ZL18allocateMaybeSwiftP18glue_swift_class_tm
+_ZL22copySwiftV1MangledNamePKcb
+_ZL13demangledNamePKcb
+_ZL16scanMangledFieldRPKcS0_S1_Ri
+_ZL30arclite_uninitialized_functionv
+_ZL12cxxConstructP11objc_object
+_ZL20fixStringForCoreDataP11objc_object
+OBJC_METACLASS_$___ARCLite__
+_ZL24OBJC_CLASS_$___ARCLite__
+_ZL31OBJC_METACLASS_RO_$___ARCLite__
+_non_lazy_classes
+_ZL27OBJC_CLASS_RO_$___ARCLite__
+_ZL11_class_name
+_ZL32OBJC_$_CLASS_METHODS___ARCLite__
+_ZL17_load_method_name
+_ZL17_load_method_type
+OBJC_METH_VAR_TYPE_6
+l_OBJC_$_PROTOCOL_INSTANCE_METHODS___ARCLiteKeyedSubscripting__
+l_OBJC_$_PROTOCOL_METHOD_TYPES___ARCLiteKeyedSubscripting__
+l_OBJC_PROTOCOL_$___ARCLiteKeyedSubscripting__
+l_OBJC_LABEL_PROTOCOL_$___ARCLiteKeyedSubscripting__
+l_OBJC_PROTOCOL_REFERENCE_$___ARCLiteKeyedSubscripting__
+.str7
+.str8
+_ZL30NSUndoManagerProxy_targetClass
+.str11
+_ZL29original_NSManagedObject_init
+_ZL40original_NSManagedObject_allocWithEntity
+_ZL35original_NSManagedObject_allocBatch
+_ZL25NSMutableDictionary_class
+.str19
+_ZL22NSConstantString_class
+.str20
+_ZL14NSString_class
+.str21
+_ZL36original_NSKKMS_fastIndexForKnownKey
+_ZL27original_NSKKMS_indexForKey
+.str26
+_ZL28original_NSKKsD_objectForKey
+_ZL34original_NSKKsD_removeObjectForKey
+_ZL32original_NSKKsD_setObject_forKey
+_ZL40original_NSKKsD_addEntriesFromDictionary
+_ZZL22add_image_hook_swiftV1PK11mach_headerlE7patches
+_ZGVZL22add_image_hook_swiftV1PK11mach_headerlE7patches
+.str31
+.str32
+_ZL31original_objc_allocateClassPair
+.str33
+_ZL31original_object_getIndexedIvars
+.str34
+_ZL22original_objc_getClass
+.str35
+_ZL26original_objc_getMetaClass
+.str36
+_ZL30original_objc_getRequiredClass
+.str37
+_ZL25original_objc_lookUpClass
+.str38
+_ZL25original_objc_getProtocol
+.str39
+_ZL22original_class_getName
+.str40
+_ZL25original_protocol_getName
+_ZL36original_objc_copyClassNamesForImage
+.str46
+.str47
+.str49
+.str50
+.str52
+.str53
+_ZL12demangleLock
+_ZL9Demangled
+.str54
+.str56
+.str57
+OBJC_SELECTOR_REFERENCES_61
+OBJC_SELECTOR_REFERENCES_65
+OBJC_SELECTOR_REFERENCES_67
+OBJC_METH_VAR_NAME_68
+OBJC_SELECTOR_REFERENCES_69
+OBJC_METH_VAR_NAME_70
+OBJC_SELECTOR_REFERENCES_71
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c++ -arch arm64 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=c++11 -Wno-trigraphs -fno-exceptions -fno-rtti -mpascal-strings -Os -Wno-missing-field-initializers -Wmissing-prototypes -Wno-implicit-atomic-properties -Wno-arc-repeated-use-of-weak -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wshorten-64-to-32 -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -Wno-c++11-extensions -D NDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.1.Internal.sdk -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -Winvalid-offsetof -miphoneos-version-min=4.3 -g -fno-threadsafe-statics -Wno-sign-conversion -fembed-bitcode -iquote /Library/Caches/com.apple.xbs/Binaries/arclite_iOS/arclite_iOS-63~53/Objects/arclite.build/arclite_iOS.build/arclite_iphoneos-generated-files.hmap -I /Library/Caches/com.apple.xbs/Binaries/arclite_iOS/arclite_iOS-63~53/Objects/arclite.build/arclite_iOS.build/arclite_iphoneos-own-target-headers.hmap -I /Library/Caches/com.apple.xbs/Binaries/arclite_iOS/arclite_iOS-63~53/Objects/arclite.build/arclite_iOS.build/arclite_iphoneos-all-target-headers.hmap -iquote /Library/Caches/com.apple.xbs/Binaries/arclite_iOS/arclite_iOS-63~53/Objects/arclite.build/arclite_iOS.build/arclite_iphoneos-project-headers.hmap -I /Library/Caches/com.apple.xbs/Binaries/arclite_iOS/arclite_iOS-63~53/Symbols/BuiltProducts/include -I /Library/Caches/com.apple.xbs/Binaries/arclite_iOS/arclite_iOS-63~53/Objects/arclite.build/arclite_iOS.build/DerivedSources/arm64 -I /Library/Caches/com.apple.xbs/Binaries/arclite_iOS/arclite_iOS-63~53/Objects/arclite.build/arclite_iOS.build/DerivedSources -F/Library/Caches/com.apple.xbs/Binaries/arclite_iOS/arclite_iOS-63~53/Symbols/BuiltProducts -F/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.1.Internal.sdk/System/Library/PrivateFrameworks -Wall -Wextra -Wno-gcc-compat -fgnu-inline-asm -MMD -MT dependencies -MF /Library/Caches/com.apple.xbs/Binaries/arclite_iOS/arclite_iOS-63~53/Objects/arclite.build/arclite_iOS.build/Objects-normal/arm64/arclite.d --serialize-diagnostics /Library/Caches/com.apple.xbs/Binaries/arclite_iOS/arclite_iOS-63~53/Objects/arclite.build/arclite_iOS.build/Objects-normal/arm64/arclite.dia -c /Library/Caches/com.apple.xbs/Sources/arclite_iOS/arclite-63/source/arclite.mm -o /Library/Caches/com.apple.xbs/Binaries/arclite_iOS/arclite_iOS-63~53/Objects/arclite.build/arclite_iOS.build/Objects-normal/arm64/arclite.o -mlinker-version=253.3.2
+__arclite_NSKKsD_addEntriesFromDictionary
+/Library/Caches/com.apple.xbs/Sources/arclite_iOS/arclite-63/source/arclite.mm
+__arclite_NSKKsD_setObject_forKey
+__arclite_NSKKsD_removeObjectForKey
+__arclite_NSKKsD_objectForKey
+__arclite_NSKKMS_indexForKey
+fixStringForCoreData
+__arclite_NSKKMS_fastIndexForKnownKey
+__arclite_NSManagedObject_allocBatch
+__arclite_NSManagedObject_allocWithEntity
+cxxConstruct
+__arclite_NSManagedObject_init
+arclite_uninitialized_function
+replaceMethod
+__arclite_NSUndoManagerProxy_isKindOfClass
+patch_lazy_pointers
+patch_t<const char **(const char *, unsigned int *)>
+__arclite_objc_copyClassNamesForImage
+patch_t<const char *(Protocol *)>
+__arclite_protocol_getName
+patch_t<const char *(Class)>
+__isctype
+/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.1.Internal.sdk/usr/include/ctype.h
+isdigit
+scanMangledField
+copySwiftV1DemangledName
+demangledName
+__arclite_class_getName
+patch_t<Protocol *(const char *)>
+__arclite_objc_getProtocol
+__arclite_objc_lookUpClass
+__arclite_objc_getRequiredClass
+__arclite_objc_getMetaClass
+patch_t<Class (const char *)>
+copySwiftV1MangledName
+__arclite_objc_getClass
+patch_t<void *(id)>
+word_align
+__arclite_object_getIndexedIvars
+patch_t<Class (Class, const char *, unsigned long)>
+allocateMaybeSwift
+isSwift
+metaclass
+__arclite_objc_allocateClassPair
+patch_t<Class (Class, const objc_image_info *)>
+initialize_imp
+property_list_nth
+transcribeProperties
+transcribeProtocols
+method_list_nth
+transcribeMethods
+alignment
+max
+ivar_list_nth
+transcribeIvars
+fastFlags
+data
+ro
+__arclite_objc_readClassPair
+add_image_hook_swiftV1
+install_swiftV1
+install_ARC
+objc_collectingEnabled
+/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.1.Internal.sdk/usr/include/objc/objc-auto.h
+keyedGetter
+__arclite_NSMutableDictionary__setObject_forKeyedSubscript
+addOrReplaceMethod
+install_dict_nil_value
+install_subscripting
+install_autoreleasepool
+__ARCLite__load

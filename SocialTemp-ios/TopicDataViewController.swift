@@ -130,7 +130,7 @@ class TopicDataViewController: UIViewController, ChartViewDelegate {
             UIColor(red: CGFloat(Double(25)/255), green: CGFloat(Double(25)/255), blue: CGFloat(Double(112)/255), alpha: 1),
             UIColor.blueColor(),
             UIColor(red: CGFloat(Double(0)/255), green: CGFloat(Double(128)/255), blue: CGFloat(Double(0)/255), alpha: 1),
-            UIColor.yellowColor(),
+            UIColor(red:0.91, green:0.85, blue:0.25, alpha:1),
             UIColor(red: CGFloat(Double(139)/255), green: CGFloat(Double(0)/255), blue: CGFloat(Double(0)/255), alpha: 1),
             UIColor.purpleColor(),
             UIColor(red: CGFloat(Double(138)/255), green: CGFloat(Double(43)/255), blue: CGFloat(Double(226)/255), alpha: 1)]
@@ -143,7 +143,7 @@ class TopicDataViewController: UIViewController, ChartViewDelegate {
         topicPieChartView.legend.neededHeight = 20.0
         topicPieChartView.backgroundColor = UIColor.darkGrayColor()
         
-        self.topicPieChartView.highlightValue(xIndex: 0, dataSetIndex: 0, callDelegate: true)
+        topicPieChartView.highlightValue(xIndex: 0, dataSetIndex: 0, callDelegate: true)
     }
     
 
