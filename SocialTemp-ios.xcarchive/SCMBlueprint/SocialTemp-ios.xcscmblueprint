@@ -2,13 +2,13 @@
   "DVTSourceControlWorkspaceBlueprintLocationsKey" : {
     "A9E9FA7CD75AE1E2259EBD80EEFF1456C484CCDA" : {
       "DVTSourceControlBranchIdentifierKey" : "master",
-      "DVTSourceControlLocationRevisionKey" : "40cf10fd321401ed2887d6b6e4bf198bcdc2e0ff",
+      "DVTSourceControlLocationRevisionKey" : "4506a37861f4519b0faa65c0f89b6a18a8fd8a07",
       "DVTSourceControlBranchOptionsKey" : 4,
       "DVTSourceControlWorkspaceBlueprintLocationTypeKey" : "DVTSourceControlBranch"
     }
   },
   "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "A9E9FA7CD75AE1E2259EBD80EEFF1456C484CCDA",
-  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "4F75EED3-A84F-4210-87E8-B791AE0C4A23",
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "23D7FE4B-8CD0-48D0-948D-BECCCF8BD0BD",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
     "A9E9FA7CD75AE1E2259EBD80EEFF1456C484CCDA" : "SocialTemp-ios\/"
   },

@@ -11,7 +11,7 @@
 		2727C2AF1BC768A00084FDBB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2727C2AE1BC768A00084FDBB /* AppDelegate.swift */; };
 		2727C2B11BC768A00084FDBB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2727C2B01BC768A00084FDBB /* ViewController.swift */; };
 		2727C2B41BC768A00084FDBB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2727C2B21BC768A00084FDBB /* Main.storyboard */; };
-		2727C2B61BC768A00084FDBB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2727C2B51BC768A00084FDBB /* Assets.xcassets */; };
+		2727C2B61BC768A00084FDBB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2727C2B51BC768A00084FDBB /* Images.xcassets */; };
 		2727C2B91BC768A00084FDBB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2727C2B71BC768A00084FDBB /* LaunchScreen.storyboard */; };
 		2727C2C41BC768A00084FDBB /* SocialTemp_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2727C2C31BC768A00084FDBB /* SocialTemp_iosTests.swift */; };
 		2727C2CF1BC768A00084FDBB /* SocialTemp_iosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2727C2CE1BC768A00084FDBB /* SocialTemp_iosUITests.swift */; };
@@ -21,6 +21,7 @@
 		27C3C96F1BFAAEFA00060B5D /* PolarityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C3C96E1BFAAEFA00060B5D /* PolarityViewController.swift */; };
 		BA6DE4A51C041FB100CC2165 /* EmotionDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6DE4A41C041FB100CC2165 /* EmotionDataViewController.swift */; };
 		BACBD5CC1C0BF885002389D3 /* SentimentByTopicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACBD5CB1C0BF885002389D3 /* SentimentByTopicViewController.swift */; };
+		BAF295E21C1142610022EE3F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAF295E11C1142610022EE3F /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,7 +46,7 @@
 		2727C2AE1BC768A00084FDBB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2727C2B01BC768A00084FDBB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2727C2B31BC768A00084FDBB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		2727C2B51BC768A00084FDBB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2727C2B51BC768A00084FDBB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		2727C2B81BC768A00084FDBB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2727C2BA1BC768A00084FDBB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2727C2BF1BC768A00084FDBB /* SocialTemp-iosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SocialTemp-iosTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -63,6 +64,8 @@
 		805D1DEB5EB5F15B49B491AF /* Pods-SocialTemp-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialTemp-ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-SocialTemp-ios/Pods-SocialTemp-ios.release.xcconfig"; sourceTree = "<group>"; };
 		BA6DE4A41C041FB100CC2165 /* EmotionDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmotionDataViewController.swift; sourceTree = "<group>"; };
 		BACBD5CB1C0BF885002389D3 /* SentimentByTopicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SentimentByTopicViewController.swift; sourceTree = "<group>"; };
+		BAF295E11C1142610022EE3F /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		BAF295E31C1148240022EE3F /* Charts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Charts.framework; path = "Pods/../build/Release-iphoneos/Charts.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +97,7 @@
 		2727C2A21BC768A00084FDBB = {
 			isa = PBXGroup;
 			children = (
+				BAF295E11C1142610022EE3F /* Default-568h@2x.png */,
 				2727C2AD1BC768A00084FDBB /* SocialTemp-ios */,
 				2727C2C21BC768A00084FDBB /* SocialTemp-iosTests */,
 				2727C2CD1BC768A00084FDBB /* SocialTemp-iosUITests */,
@@ -125,7 +129,7 @@
 				27C3C96E1BFAAEFA00060B5D /* PolarityViewController.swift */,
 				27C3C96C1BDACD6F00060B5D /* TopicDataViewController.swift */,
 				BA6DE4A41C041FB100CC2165 /* EmotionDataViewController.swift */,
-				2727C2B51BC768A00084FDBB /* Assets.xcassets */,
+				2727C2B51BC768A00084FDBB /* Images.xcassets */,
 				2727C2B71BC768A00084FDBB /* LaunchScreen.storyboard */,
 				2727C2BA1BC768A00084FDBB /* Info.plist */,
 			);
@@ -162,6 +166,7 @@
 		CC9365D538C3C515892E2215 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BAF295E31C1148240022EE3F /* Charts.framework */,
 				3E2346EBA2F26838B0023B81 /* Pods_SocialTemp_ios.framework */,
 			);
 			name = Frameworks;
@@ -277,7 +282,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				2727C2B91BC768A00084FDBB /* LaunchScreen.storyboard in Resources */,
-				2727C2B61BC768A00084FDBB /* Assets.xcassets in Resources */,
+				BAF295E21C1142610022EE3F /* Default-568h@2x.png in Resources */,
+				2727C2B61BC768A00084FDBB /* Images.xcassets in Resources */,
 				2727C2B41BC768A00084FDBB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -430,8 +436,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Northwestern University";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: henryspindell@gmail.com (D9CD8X2ZCS)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: henryspindell@gmail.com (D9CD8X2ZCS)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -453,7 +459,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "228df4d3-4dc3-45b4-9b57-f30e5c4da934";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -478,7 +484,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Northwestern University";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Northwestern University";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -505,11 +511,18 @@
 			baseConfigurationReference = 3A2061BDFD86A8BE4FBDF30B /* Pods-SocialTemp-ios.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: henryspindell@gmail.com (D9CD8X2ZCS)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: henryspindell@gmail.com (D9CD8X2ZCS)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Release-iphoneos",
+				);
 				INFOPLIST_FILE = "SocialTemp-ios/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "edu.northwestern.delta.SocialTemp-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -519,10 +532,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Northwestern University";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Release-iphoneos",
+				);
 				INFOPLIST_FILE = "SocialTemp-ios/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "edu.northwestern.delta.SocialTemp-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
